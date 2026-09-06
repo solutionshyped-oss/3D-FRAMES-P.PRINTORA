@@ -7,13 +7,11 @@
 <title>Checkout | P.PRINTORA</title>
 <meta name="description" content="Complete your P.PRINTORA 3D printed frame order.">
 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-<!-- Razorpay -->
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <style>
 :root{
@@ -27,15 +25,7 @@
   --purple:#8a42ff;
   --blue:#159cff;
   --green:#21d47b;
-
-  --gradient:
-    linear-gradient(
-      110deg,
-      var(--orange),
-      var(--pink) 42%,
-      var(--purple) 70%,
-      var(--blue)
-    );
+  --gradient:linear-gradient(110deg,var(--orange),var(--pink) 42%,var(--purple) 70%,var(--blue));
 }
 
 *{
@@ -46,18 +36,9 @@
 
 body{
   background:
-    radial-gradient(
-      circle at 10% 0%,
-      rgba(255,173,24,.07),
-      transparent 24%
-    ),
-    radial-gradient(
-      circle at 90% 15%,
-      rgba(21,156,255,.08),
-      transparent 28%
-    ),
+    radial-gradient(circle at 10% 0%,rgba(255,173,24,.07),transparent 24%),
+    radial-gradient(circle at 90% 15%,rgba(21,156,255,.08),transparent 28%),
     var(--bg);
-
   color:var(--white);
   font-family:"DM Sans",sans-serif;
   line-height:1.5;
@@ -92,7 +73,7 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(3,5,13,.88);
+  background:rgba(3,5,13,.9);
   backdrop-filter:blur(18px);
   border-bottom:1px solid var(--line);
 }
@@ -125,19 +106,13 @@ header{
 
 .navlinks{
   display:flex;
-  gap:34px;
+  gap:30px;
   font-size:12px;
   color:#dfe5f2;
 }
 
 .navlinks a:hover{
   color:#fff;
-}
-
-.nav-actions{
-  display:flex;
-  align-items:center;
-  gap:18px;
 }
 
 .shop-btn{
@@ -195,12 +170,10 @@ header{
       rgba(255,22,135,.05),
       rgba(21,156,255,.08)
     );
-
   padding:13px 17px;
   border-radius:6px;
   margin-bottom:22px;
   font-size:12px;
-
   display:flex;
   gap:12px;
   align-items:center;
@@ -237,7 +210,6 @@ header{
       rgba(255,255,255,.035),
       rgba(255,255,255,.012)
     );
-
   border:1px solid var(--line);
   border-radius:7px;
   padding:18px;
@@ -271,7 +243,7 @@ header{
 
 .product-info h3{
   font:600 15px "Playfair Display",serif;
-  margin:4px 0 4px;
+  margin:4px 0;
 }
 
 .product-info p{
@@ -398,25 +370,22 @@ textarea{
   height:50px;
   border:0;
   border-radius:8px;
-
   background:var(--gradient);
-
   color:#fff;
   font-size:12px;
   font-weight:800;
   cursor:pointer;
-
   transition:.25s;
   margin-top:5px;
 }
 
 .order-btn:hover{
   transform:translateY(-2px);
-  box-shadow:0 10px 30px rgba(138,66,255,.22);
+  box-shadow:0 10px 30px rgba(255,22,135,.18);
 }
 
 .order-btn:disabled{
-  opacity:.6;
+  opacity:.55;
   cursor:not-allowed;
   transform:none;
 }
@@ -428,7 +397,6 @@ textarea{
   margin-top:14px;
   font-size:10px;
   color:var(--muted);
-
   display:flex;
   gap:9px;
   align-items:flex-start;
@@ -487,10 +455,8 @@ footer{
   border-top:1px solid var(--line);
   margin-top:25px;
   padding-top:16px;
-
   display:flex;
   justify-content:space-between;
-
   font-size:9px;
   color:#71798a;
 }
@@ -499,20 +465,15 @@ footer{
   position:fixed;
   right:22px;
   bottom:20px;
-
   width:48px;
   height:48px;
-
   border-radius:50%;
   background:var(--green);
   color:#03120b;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
-  font-size:23px;
-
+  font-size:20px;
   box-shadow:0 10px 30px rgba(33,212,123,.28);
 }
 
@@ -588,13 +549,9 @@ footer{
       <a href="index.html#contact">Contact</a>
     </nav>
 
-    <div class="nav-actions">
-      <span>⌕</span>
-      <span>🛒</span>
-      <a class="shop-btn" href="index.html#collection">
-        Shop Now
-      </a>
-    </div>
+    <a class="shop-btn" href="index.html#collection">
+      Shop Now
+    </a>
 
   </div>
 </header>
@@ -627,21 +584,13 @@ footer{
 
   <div class="sale">
 
-    <strong>
-      LIMITED OFFER
-    </strong>
+    <strong>LIMITED OFFER</strong>
 
-    <span>
-      Premium frame
-    </span>
+    <span>Premium 3D Printed Frame</span>
 
-    <span class="old">
-      ₹1,599
-    </span>
+    <span class="old">₹1,599</span>
 
-    <strong>
-      ₹499
-    </strong>
+    <strong>₹499</strong>
 
     <span class="off">
       69% OFF
@@ -664,11 +613,9 @@ footer{
       <div class="product-summary">
 
         <div class="product-img">
-          <img
-            id="productImage"
-            src="product1.jpeg"
-            alt=""
-          >
+          <img id="productImage"
+               src="product1.jpeg"
+               alt="Product">
         </div>
 
         <div class="product-info">
@@ -704,7 +651,8 @@ footer{
           Quantity
         </label>
 
-        <select id="quantity" onchange="updateTotal()">
+        <select id="quantity"
+                onchange="updateTotal()">
 
           <option value="1">
             1 Frame
@@ -735,22 +683,30 @@ footer{
 
         <div class="row">
           <span>Original Price</span>
-          <span id="originalTotal">₹1,599</span>
+          <span id="originalTotal">
+            ₹1,599
+          </span>
         </div>
 
         <div class="row">
           <span>Sale Price</span>
-          <span>₹499</span>
+          <span>
+            ₹499
+          </span>
         </div>
 
         <div class="row">
           <span>Quantity</span>
-          <span id="quantityText">1</span>
+          <span id="quantityText">
+            1
+          </span>
         </div>
 
         <div class="row total">
           <span>Total</span>
-          <span id="total">₹499</span>
+          <span id="total">
+            ₹499
+          </span>
         </div>
 
       </div>
@@ -759,18 +715,17 @@ footer{
       <div class="secure">
 
         <strong>
-          🔒 &nbsp; Secure Razorpay Payment
+          🔒 Secure Payment
         </strong>
 
-        Your payment is securely processed through Razorpay.
-        Your delivery details are attached to your order.
+        Payments are securely processed through Razorpay.
 
       </div>
 
     </section>
 
 
-    <!-- DELIVERY -->
+    <!-- DELIVERY FORM -->
 
     <section class="card">
 
@@ -781,11 +736,10 @@ footer{
       <div class="notice">
 
         <b>
-          📦 &nbsp; Enter your delivery address carefully.
+          📦 Enter your delivery details carefully.
         </b>
 
-        Your details will be securely attached to your Razorpay
-        order so your frame can be prepared for delivery.
+        Your address will be securely attached to your order for processing.
 
       </div>
 
@@ -908,7 +862,9 @@ footer{
               <span class="req">*</span>
             </label>
 
-            <select id="quantity2" onchange="syncQuantity()">
+            <select
+              id="quantity2"
+              onchange="syncQuantity()">
 
               <option value="1">
                 1 Frame
@@ -955,9 +911,10 @@ footer{
         <button
           class="order-btn"
           id="payButton"
-          type="submit"
-        >
-          🔒 &nbsp; Pay ₹499 Securely
+          type="submit">
+
+          🔒 &nbsp; Pay Securely with Razorpay
+
         </button>
 
       </form>
@@ -965,11 +922,11 @@ footer{
 
       <div class="after">
 
-        🔒
+        🔐
 
         <span>
-          You will be redirected to Razorpay's secure payment
-          window to complete your payment.
+          You will be redirected to Razorpay's secure payment window.
+          Your payment details are handled by Razorpay.
         </span>
 
       </div>
@@ -996,8 +953,7 @@ footer{
 
           <img
             src="logo.png"
-            alt="P.PRINTORA logo"
-          >
+            alt="P.PRINTORA logo">
 
           <span>
             P.PRINTORA
@@ -1006,8 +962,8 @@ footer{
         </a>
 
         <p>
-          Premium 3D printed devotional frames designed
-          to add depth, character and devotion to your space.
+          Premium 3D printed devotional frames designed to add depth,
+          character and devotion to your space.
         </p>
 
       </div>
@@ -1046,9 +1002,10 @@ footer{
 
         <a
           href="https://wa.me/918894381130"
-          target="_blank"
-        >
+          target="_blank">
+
           WhatsApp
+
         </a>
 
         <span>
@@ -1099,20 +1056,17 @@ footer{
   class="whatsapp"
   href="https://wa.me/918894381130"
   target="_blank"
-  aria-label="WhatsApp"
->
+  aria-label="WhatsApp">
+
   ◉
+
 </a>
 
 
 <script>
 
 const SALE_PRICE = 499;
-
 const OLD_PRICE = 1599;
-
-
-/* PRODUCTS */
 
 const products = [
 
@@ -1149,13 +1103,9 @@ const products = [
 ];
 
 
-/* SELECT PRODUCT */
+const params = new URLSearchParams(location.search);
 
-const params =
-  new URLSearchParams(location.search);
-
-let index =
-  Number(params.get("product"));
+let index = Number(params.get("product"));
 
 if(
   !Number.isInteger(index) ||
@@ -1165,36 +1115,27 @@ if(
   index = 0;
 }
 
+
 const p = products[index];
 
 
-document.getElementById("productImage").src =
-  p.image;
+document.getElementById("productImage").src = p.image;
 
-document.getElementById("productImage").alt =
-  p.name;
+document.getElementById("productImage").alt = p.name;
 
-document.getElementById("productName").textContent =
-  p.name;
+document.getElementById("productName").textContent = p.name;
 
-document.getElementById("productDescription").textContent =
-  p.description;
+document.getElementById("productDescription").textContent = p.description;
 
-
-/* UPDATE TOTAL */
 
 function updateTotal(){
 
   const q =
-    Number(
-      document.getElementById("quantity").value
-    );
+    Number(document.getElementById("quantity").value);
 
-  document.getElementById("quantity2").value =
-    q;
+  document.getElementById("quantity2").value = q;
 
-  document.getElementById("quantityText").textContent =
-    q;
+  document.getElementById("quantityText").textContent = q;
 
   document.getElementById("originalTotal").textContent =
     "₹" +
@@ -1204,14 +1145,8 @@ function updateTotal(){
     "₹" +
     (SALE_PRICE * q).toLocaleString("en-IN");
 
-  document.getElementById("payButton").textContent =
-    "🔒  Pay ₹" +
-    (SALE_PRICE * q).toLocaleString("en-IN") +
-    " Securely";
 }
 
-
-/* SYNC QUANTITY */
 
 function syncQuantity(){
 
@@ -1226,391 +1161,376 @@ function syncQuantity(){
 updateTotal();
 
 
-/* PAYMENT */
-
 document
-  .getElementById("orderForm")
-  .addEventListener("submit", async function(e){
+.getElementById("orderForm")
+.addEventListener("submit", async function(e){
 
-    e.preventDefault();
+  e.preventDefault();
 
 
-    const button =
-      document.getElementById("payButton");
+  const button =
+    document.getElementById("payButton");
 
 
-    const name =
-      document.getElementById("name")
-        .value
-        .trim();
+  const name =
+    document.getElementById("name").value.trim();
 
 
-    const phone =
-      document.getElementById("phone")
-        .value
-        .replace(/\D/g,"");
+  const phone =
+    document
+    .getElementById("phone")
+    .value
+    .replace(/\D/g,"");
 
 
-    const address =
-      document.getElementById("address")
-        .value
-        .trim();
+  const address =
+    document.getElementById("address").value.trim();
 
 
-    const city =
-      document.getElementById("city")
-        .value
-        .trim();
+  const city =
+    document.getElementById("city").value.trim();
 
 
-    const state =
-      document.getElementById("state")
-        .value
-        .trim();
+  const state =
+    document.getElementById("state").value.trim();
 
 
-    const pincode =
-      document.getElementById("pincode")
-        .value
-        .replace(/\D/g,"");
+  const pincode =
+    document
+    .getElementById("pincode")
+    .value
+    .replace(/\D/g,"");
 
 
-    const quantity =
-      Number(
-        document.getElementById("quantity")
-          .value
-      );
+  const quantity =
+    Number(document.getElementById("quantity").value);
 
 
-    const note =
-      document.getElementById("note")
-        .value
-        .trim();
+  const note =
+    document.getElementById("note").value.trim();
 
 
-    /* VALIDATION */
+  if(phone.length !== 10){
 
-    if(phone.length !== 10){
+    alert(
+      "Please enter a valid 10-digit mobile number."
+    );
 
-      alert(
-        "Please enter a valid 10-digit mobile number."
-      );
+    document.getElementById("phone").focus();
 
-      document.getElementById("phone").focus();
+    return;
 
-      return;
+  }
 
-    }
 
+  if(pincode.length !== 6){
 
-    if(pincode.length !== 6){
+    alert(
+      "Please enter a valid 6-digit PIN code."
+    );
 
-      alert(
-        "Please enter a valid 6-digit PIN code."
-      );
+    document.getElementById("pincode").focus();
 
-      document.getElementById("pincode").focus();
+    return;
 
-      return;
+  }
 
-    }
 
+  if(quantity < 1 || quantity > 5){
 
-    if(quantity < 1 || quantity > 5){
+    alert(
+      "Please select a valid quantity."
+    );
 
-      alert(
-        "Please select a valid quantity."
-      );
+    return;
 
-      return;
+  }
 
-    }
 
+  button.disabled = true;
 
-    const total =
-      SALE_PRICE * quantity;
+  button.textContent =
+    "Creating secure payment...";
 
 
-    /* DISABLE BUTTON */
+  try{
 
-    button.disabled = true;
 
-    button.textContent =
-      "Creating secure payment...";
+    /*
+      STEP 1
+      Create Razorpay Order on SERVER
+    */
 
+    const orderResponse =
+      await fetch("/api/create-order",{
 
-    try{
+        method:"POST",
 
-
-      /* CREATE RAZORPAY ORDER */
-
-      const response =
-        await fetch("/api/create-order", {
-
-          method:"POST",
-
-          headers:{
-            "Content-Type":"application/json"
-          },
-
-          body:JSON.stringify({
-
-            product:p.name,
-
-            quantity:quantity,
-
-            customer_name:name,
-
-            customer_phone:phone,
-
-            address:address,
-
-            city:city,
-
-            state:state,
-
-            pincode:pincode,
-
-            landmark:note
-
-          })
-
-        });
-
-
-      const data =
-        await response.json();
-
-
-      if(!response.ok || !data.success){
-
-        throw new Error(
-          data.error ||
-          "Unable to create Razorpay order."
-        );
-
-      }
-
-
-      /*
-        Razorpay checkout
-      */
-
-      const options = {
-
-        key:
-          data.key_id,
-
-        amount:
-          data.amount,
-
-        currency:
-          data.currency || "INR",
-
-        name:
-          "P.PRINTORA",
-
-        description:
-          p.name + " × " + quantity,
-
-        order_id:
-          data.order_id,
-
-
-        prefill:{
-
-          name:name,
-
-          contact:
-            "+91" + phone
-
+        headers:{
+          "Content-Type":"application/json"
         },
 
-
-        notes:{
+        body:JSON.stringify({
 
           product:p.name,
 
-          quantity:String(quantity)
+          quantity:quantity,
 
-        },
+          customer_name:name,
 
+          customer_phone:phone,
 
-        theme:{
+          address:address,
 
-          color:"#8a42ff"
+          city:city,
 
-        },
+          state:state,
 
+          pincode:pincode,
 
-        handler:
-          async function(paymentResponse){
+          landmark:note
 
-            button.disabled = true;
+        })
 
-            button.textContent =
-              "Verifying payment...";
-
-
-            try{
-
-              /*
-                VERIFY PAYMENT
-              */
-
-              const verifyResponse =
-                await fetch(
-                  "/api/verify-payment",
-                  {
-
-                    method:"POST",
-
-                    headers:{
-                      "Content-Type":"application/json"
-                    },
-
-                    body:JSON.stringify({
-
-                      orderId:
-                        data.order_id,
-
-                      orderToken:
-                        data.order_token,
-
-                      paymentId:
-                        paymentResponse.razorpay_payment_id,
-
-                      signature:
-                        paymentResponse.razorpay_signature
-
-                    })
-
-                  }
-                );
+      });
 
 
-              const verifyData =
-                await verifyResponse.json();
+    const orderData =
+      await orderResponse.json();
 
 
-              if(
-                !verifyResponse.ok ||
-                !verifyData.success
-              ){
+    if(
+      !orderResponse.ok ||
+      !orderData.success
+    ){
 
-                throw new Error(
-                  verifyData.error ||
-                  "Payment verification failed."
-                );
+      throw new Error(
+        orderData.error ||
+        "Could not create Razorpay order."
+      );
 
-              }
-
-
-              /*
-                PAYMENT SUCCESS
-              */
-
-              const successUrl =
-                "success.html" +
-                "?order_id=" +
-                encodeURIComponent(
-                  data.order_id
-                ) +
-                "&payment_id=" +
-                encodeURIComponent(
-                  paymentResponse.razorpay_payment_id
-                ) +
-                "&amount=" +
-                encodeURIComponent(
-                  total
-                );
+    }
 
 
-              window.location.href =
-                successUrl;
+    /*
+      STEP 2
+      Open Razorpay Checkout
+    */
+
+    const options = {
+
+      key: orderData.key_id,
+
+      amount: orderData.amount,
+
+      currency: orderData.currency,
+
+      name: "P.PRINTORA",
+
+      description:
+        p.name + " × " + quantity,
+
+      order_id:
+        orderData.order_id,
 
 
-            }catch(error){
+      prefill:{
 
-              console.error(error);
+        name:name,
 
-              alert(
-                "Payment was received, but verification could not be completed immediately. Please contact P.PRINTORA with your payment ID: " +
-                paymentResponse.razorpay_payment_id
-              );
+        contact:"+91" + phone
 
-              button.disabled = false;
-
-              updateTotal();
-
-            }
-
-          },
+      },
 
 
-        modal:{
+      notes:{
 
-          ondismiss:function(){
+        product:p.name,
 
-            button.disabled = false;
+        quantity:String(quantity)
 
-            updateTotal();
+      },
 
-          }
+
+      theme:{
+
+        color:"#ff1687"
+
+      },
+
+
+      modal:{
+
+        ondismiss:function(){
+
+          button.disabled = false;
+
+          button.textContent =
+            "🔒  Pay Securely with Razorpay";
 
         }
 
-      };
+      },
 
 
       /*
-        OPEN RAZORPAY
+        STEP 3
+        Razorpay returns payment details
       */
 
-      const razorpay =
-        new Razorpay(options);
+      handler:async function(response){
+
+        button.disabled = true;
+
+        button.textContent =
+          "Verifying payment...";
 
 
-      razorpay.on(
-        "payment.failed",
-        function(response){
+        try{
 
-          console.error(
-            "Payment failed:",
-            response.error
-          );
+
+          /*
+            STEP 4
+            Verify payment on SERVER
+          */
+
+          const verifyResponse =
+            await fetch("/api/verify-payment",{
+
+              method:"POST",
+
+              headers:{
+                "Content-Type":"application/json"
+              },
+
+              body:JSON.stringify({
+
+                orderId:
+                  response.razorpay_order_id,
+
+                orderToken:
+                  orderData.order_token,
+
+                paymentId:
+                  response.razorpay_payment_id,
+
+                signature:
+                  response.razorpay_signature
+
+              })
+
+            });
+
+
+          const verifyData =
+            await verifyResponse.json();
+
+
+          if(
+            !verifyResponse.ok ||
+            !verifyData.success
+          ){
+
+            throw new Error(
+              verifyData.error ||
+              "Payment verification failed."
+            );
+
+          }
+
+
+          /*
+            STEP 5
+            Payment successful
+          */
+
+          const successUrl =
+            "success.html" +
+            "?order_id=" +
+            encodeURIComponent(
+              response.razorpay_order_id
+            ) +
+            "&payment_id=" +
+            encodeURIComponent(
+              response.razorpay_payment_id
+            ) +
+            "&amount=" +
+            encodeURIComponent(
+              verifyData.amount || orderData.amount
+            );
+
+
+          window.location.href =
+            successUrl;
+
+
+        }catch(error){
+
+          console.error(error);
 
           alert(
-            "Payment failed. Please try again."
+            "Payment was received, but verification could not be completed. Please contact P.PRINTORA with your payment ID: " +
+            response.razorpay_payment_id
           );
 
           button.disabled = false;
 
-          updateTotal();
+          button.textContent =
+            "🔒  Pay Securely with Razorpay";
 
         }
-      );
+
+      }
+
+    };
 
 
-      razorpay.open();
+    const razorpay =
+      new Razorpay(options);
 
 
-    }catch(error){
+    razorpay.on(
+      "payment.failed",
+      function(response){
 
-      console.error(error);
+        console.error(
+          "Razorpay payment failed:",
+          response
+        );
 
-      alert(
-        error.message ||
-        "Something went wrong. Please try again."
-      );
+        alert(
+          "Payment failed. Please try again."
+        );
 
-      button.disabled = false;
+        button.disabled = false;
 
-      updateTotal();
+        button.textContent =
+          "🔒  Pay Securely with Razorpay";
 
-    }
+      }
+    );
 
-  });
+
+    razorpay.open();
+
+
+  }catch(error){
+
+    console.error(error);
+
+    alert(
+      error.message ||
+      "Something went wrong. Please try again."
+    );
+
+    button.disabled = false;
+
+    button.textContent =
+      "🔒  Pay Securely with Razorpay";
+
+  }
+
+});
 
 </script>
 
