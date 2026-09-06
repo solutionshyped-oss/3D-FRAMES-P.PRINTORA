@@ -1,13 +1,14 @@
 const Razorpay = require("razorpay");
 
-module.exports = async (req, res) => {
-  if (req.method !== "POST") {
-    return res.status(405).json({
-      error: "Method not allowed"
-    });
-  }
-
+module.exports = async function handler(req, res) {
   try {
+    if (req.method !== "POST") {
+      return res.status(405).json({
+        success: false,
+        error: "Method not allowed"
+      });
+    }
+
     const {
       product,
       quantity,
@@ -22,44 +23,46 @@ module.exports = async (req, res) => {
 
     const qty = Number(quantity);
 
-    // Basic validation
-    if (!product || !qty || qty < 1 || qty > 10) {
+    if (!Number.isInteger(qty) || qty < 1 || qty > 10) {
       return res.status(400).json({
-        error: "Invalid order details"
+        success: false,
+        error: "Invalid quantity"
       });
     }
 
-    if (
-      !customer_name ||
-      !customer_phone ||
-      !address ||
-      !city ||
-      !state ||
-      !pincode
-    ) {
+    if (!customer_name || !customer_phone || !address || !city || !state || !pincode) {
       return res.status(400).json({
-        error: "Please provide all delivery details"
+        success: false,
+        error: "Please fill all required delivery details"
       });
     }
 
-    // P.PRINTORA product price
-    const PRICE = 499;
-    const amount = PRICE * qty;
+    const keyId = process.env.RAZORPAY_KEY_ID;
+    const keySecret = process.env.RAZORPAY_KEY_SECRET;
 
-    // Razorpay configuration
+    if (!keyId || !keySecret) {
+      console.error("Razorpay environment variables are missing");
+
+      return res.status(500).json({
+        success: false,
+        error: "Razorpay configuration is missing on the server"
+      });
+    }
+
     const razorpay = new Razorpay({
-      key_id: process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_KEY_SECRET
+      key_id: keyId,
+      key_secret: keySecret
     });
 
-    // Create Razorpay order
+    const pricePerItem = 499;
+    const amount = pricePerItem * qty;
+
     const options = {
       amount: amount * 100,
       currency: "INR",
-      receipt: "PP_" + Date.now(),
-
+      receipt: `PPRINTORA_${Date.now()}`,
       notes: {
-        product: String(product),
+        product: String(product || ""),
         quantity: String(qty),
         customer_name: String(customer_name),
         customer_phone: String(customer_phone),
@@ -75,16 +78,19 @@ module.exports = async (req, res) => {
 
     return res.status(200).json({
       success: true,
+      key_id: keyId,
+      amount: amount,
+      currency: "INR",
       order_id: order.id,
-      amount: order.amount,
-      currency: order.currency
+      order_token: order.id
     });
 
   } catch (error) {
-    console.error("Razorpay order creation error:", error);
+    console.error("CREATE ORDER ERROR:", error);
 
     return res.status(500).json({
-      error: "Failed to create Razorpay order"
+      success: false,
+      error: error.message || "Failed to create Razorpay order"
     });
   }
 };
