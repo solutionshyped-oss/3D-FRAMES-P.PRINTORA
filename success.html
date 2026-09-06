@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Successful | P.PRINTORA</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  min-height:100vh;
+  background:#03050d;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.card{
+  width:min(520px,100%);
+  background:#090e1a;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  padding:40px 28px;
+  text-align:center;
+}
+
+.logo{
+  width:65px;
+  height:65px;
+  object-fit:contain;
+  border-radius:50%;
+  margin:0 auto 20px;
+}
+
+.icon{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:#21d47b;
+  color:#03120b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+  font-weight:bold;
+  margin:0 auto 20px;
+}
+
+h1{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+p{
+  color:#9da6ba;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.order-box{
+  margin:25px 0;
+  padding:18px;
+  background:#0d1322;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;
+  text-align:left;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  margin:10px 0;
+  font-size:13px;
+}
+
+.label{
+  color:#9da6ba;
+}
+
+.value{
+  font-weight:bold;
+  text-align:right;
+  word-break:break-word;
+}
+
+.whatsapp{
+  display:block;
+  width:100%;
+  padding:14px;
+  background:#21d47b;
+  color:#03120b;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:18px;
+}
+
+.home{
+  display:block;
+  margin-top:12px;
+  padding:13px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:9px;
+  color:#fff;
+  text-decoration:none;
+}
+
+.small{
+  margin-top:20px;
+  font-size:11px;
+  color:#71798a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <img src="logo.png" class="logo" alt="P.PRINTORA">
+
+  <div class="icon">✓</div>
+
+  <h1>Order Successful!</h1>
+
+  <p>
+    Thank you for shopping with P.PRINTORA.
+    Your payment has been successfully received.
+  </p>
+
+  <div class="order-box">
+
+    <div class="row">
+      <span class="label">Order ID</span>
+      <span class="value" id="orderId">—</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Payment ID</span>
+      <span class="value" id="paymentId">—</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Amount Paid</span>
+      <span class="value" id="amount">—</span>
+    </div>
+
+  </div>
+
+  <a
+    id="whatsapp"
+    class="whatsapp"
+    href="#"
+    target="_blank"
+  >
+    Confirm Order on WhatsApp
+  </a>
+
+  <a class="home" href="index.html">
+    ← Back to P.PRINTORA
+  </a>
+
+  <div class="small">
+    P.PRINTORA · Shape Ideas. Build Reality.
+  </div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const orderId = params.get("order_id") || "—";
+const paymentId = params.get("payment_id") || "—";
+const amount = params.get("amount");
+
+document.getElementById("orderId").textContent = orderId;
+document.getElementById("paymentId").textContent = paymentId;
+
+if(amount){
+  document.getElementById("amount").textContent =
+    "₹" + Number(amount).toLocaleString("en-IN");
+}
+
+const message =
+`Hello P.PRINTORA,
+
+My payment was successful.
+
+Order ID: ${orderId}
+Payment ID: ${paymentId}
+Amount Paid: ₹${amount || ""}
+
+Please confirm my order.`;
+
+document.getElementById("whatsapp").href =
+  "https://wa.me/918894381130?text=" +
+  encodeURIComponent(message);
+
+</script>
+
+</body>
+</html>
