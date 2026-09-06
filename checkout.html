@@ -1,1099 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>P.PRINTORA | Complete Your Order</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | P.PRINTORA</title>
+<meta name="description" content="Complete your P.PRINTORA 3D printed frame order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root{
+  --bg:#03050d;--card:#090e1a;--card2:#0d1322;--white:#f7f9ff;--muted:#9da6ba;
+  --line:rgba(255,255,255,.12);--orange:#ffad18;--pink:#ff1687;--purple:#8a42ff;
+  --blue:#159cff;--cyan:#13d8ff;--green:#21d47b;
+  --gradient:linear-gradient(110deg,var(--orange),var(--pink) 42%,var(--purple) 70%,var(--blue));
 }
-
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#050505;
-    color:#f5f5f5;
-    line-height:1.6;
+  background:
+    radial-gradient(circle at 10% 0%,rgba(255,173,24,.07),transparent 24%),
+    radial-gradient(circle at 90% 15%,rgba(21,156,255,.08),transparent 28%),var(--bg);
+  color:var(--white);font-family:"DM Sans",sans-serif;line-height:1.5
 }
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-/* HEADER */
-
-header{
-    height:72px;
-    border-bottom:1px solid #222;
-    position:sticky;
-    top:0;
-    background:rgba(5,5,5,.95);
-    backdrop-filter:blur(14px);
-    z-index:100;
-}
-
-.nav{
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-weight:bold;
-    letter-spacing:1px;
-}
-
-.logo img{
-    width:42px;
-    height:42px;
-    object-fit:contain;
-}
-
-.logo span{
-    font-size:15px;
-}
-
-.back{
-    color:#888;
-    font-size:12px;
-}
-
-.back:hover{
-    color:#fff;
-}
-
-/* PAGE */
-
-.page{
-    padding:65px 0 100px;
-}
-
-.page-header{
-    margin-bottom:35px;
-}
-
-.label{
-    color:#777;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:10px;
-}
-
-h1{
-    font-family:Georgia,serif;
-    font-size:48px;
-    font-weight:500;
-    margin:8px 0;
-}
-
-.subtitle{
-    color:#777;
-    font-size:14px;
-}
-
-/* SALE */
-
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin:auto}
+.top-line{height:2px;background:var(--gradient);position:fixed;top:0;left:0;right:0;z-index:1001}
+header{position:sticky;top:0;z-index:1000;background:rgba(3,5,13,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.4px}.logo img{width:38px;height:38px;object-fit:contain;border-radius:50%}.logo span{font-size:15px}
+.navlinks{display:flex;gap:34px;font-size:12px;color:#dfe5f2}.navlinks a:hover{color:#fff}
+.nav-actions{display:flex;align-items:center;gap:18px}.shop-btn{padding:10px 17px;border-radius:999px;background:#fff;color:#05070d;font-size:12px;font-weight:700}
+.page{padding:30px 0 75px}
+.back{font-size:11px;color:#c1c8d6;display:inline-flex;gap:7px;margin-bottom:28px}.back:hover{color:#fff}
+.head{margin-bottom:28px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#aeb7c9}.head h1{font:600 38px "Playfair Display",serif;margin:5px 0}.head p{font-size:12px;color:var(--muted)}
 .sale{
-    border:1px solid #333;
-    background:#0a0a0a;
-    padding:17px 20px;
-    border-radius:10px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    margin-bottom:25px;
+  border:1px solid rgba(255,173,24,.3);background:linear-gradient(100deg,rgba(255,173,24,.08),rgba(255,22,135,.05),rgba(21,156,255,.08));
+  padding:13px 17px;border-radius:6px;margin-bottom:22px;font-size:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap
 }
-
-.sale strong{
-    font-size:18px;
+.sale strong{font-size:17px}.old{text-decoration:line-through;color:#777}.off{padding:5px 8px;border-radius:999px;border:1px solid rgba(255,173,24,.6);font-size:9px;font-weight:800}
+.layout{display:grid;grid-template-columns:1fr 1.35fr;gap:16px}
+.card{
+  background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+  border:1px solid var(--line);border-radius:7px;padding:18px;
 }
-
-.sale-right{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.card h2{font:600 17px "Playfair Display",serif;margin-bottom:17px}
+.product-summary{display:grid;grid-template-columns:105px 1fr;gap:14px}
+.product-img{width:105px;height:105px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:#070b14}.product-img img{width:100%;height:100%;object-fit:cover}
+.product-info h3{font:600 15px "Playfair Display",serif;margin:4px 0 4px}.product-info p{font-size:10px;color:var(--muted)}
+.prices{margin-top:17px;font-size:13px}.sale-price{font-size:18px;font-weight:800;margin-left:8px}
+.quantity{margin-top:22px}.quantity label{display:block;font-size:10px;margin-bottom:7px}
+select,input,textarea{
+  width:100%;background:#080d17;border:1px solid rgba(255,255,255,.18);color:#fff;
+  border-radius:6px;outline:none;padding:12px;font-size:11px;transition:.2s
 }
-
-.old{
-    text-decoration:line-through;
-    color:#666;
-}
-
-.discount{
-    font-size:10px;
-    border:1px solid #555;
-    padding:4px 8px;
-    border-radius:20px;
-}
-
-/* LAYOUT */
-
-.checkout-grid{
-    display:grid;
-    grid-template-columns:1fr 1.15fr;
-    gap:20px;
-}
-
-/* BOX */
-
-.box{
-    border:1px solid #252525;
-    background:#090909;
-    border-radius:10px;
-    padding:25px;
-}
-
-.box h2{
-    font-family:Georgia,serif;
-    font-size:22px;
-    font-weight:500;
-    margin-bottom:20px;
-}
-
-/* PRODUCT */
-
-.product{
-    display:flex;
-    gap:18px;
-    padding-bottom:20px;
-    border-bottom:1px solid #222;
-}
-
-.product-image{
-    width:115px;
-    height:115px;
-    flex-shrink:0;
-    background:#111;
-    border:1px solid #333;
-    border-radius:7px;
-    overflow:hidden;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.product-info{
-    flex:1;
-}
-
-.product-info h3{
-    font-family:Georgia,serif;
-    font-size:18px;
-    margin-bottom:5px;
-}
-
-.product-info p{
-    color:#777;
-    font-size:11px;
-}
-
-.prices{
-    margin-top:15px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.prices .old{
-    font-size:12px;
-}
-
-.sale-price{
-    font-size:20px;
-    font-weight:bold;
-}
-
-/* SUMMARY */
-
-.summary{
-    padding-top:20px;
-}
-
-.summary-row{
-    display:flex;
-    justify-content:space-between;
-    padding:8px 0;
-    color:#aaa;
-    font-size:13px;
-}
-
-.summary-row.total{
-    border-top:1px solid #333;
-    margin-top:12px;
-    padding-top:18px;
-    color:#fff;
-    font-size:18px;
-    font-weight:bold;
-}
-
-/* FORM */
-
-.form-group{
-    margin-bottom:16px;
-}
-
-label{
-    display:block;
-    font-size:11px;
-    margin-bottom:7px;
-    color:#bbb;
-}
-
-input,
-textarea,
-select{
-    width:100%;
-    background:#0d0d0d;
-    color:#fff;
-    border:1px solid #333;
-    border-radius:7px;
-    padding:13px 14px;
-    outline:none;
-    font-family:inherit;
-    font-size:13px;
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-    border-color:#777;
-}
-
-textarea{
-    min-height:90px;
-    resize:vertical;
-}
-
-.row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-}
-
-/* SECURITY */
-
-.secure{
-    margin-top:20px;
-    border:1px solid #292929;
-    border-radius:8px;
-    padding:16px;
-    display:flex;
-    gap:12px;
-}
-
-.secure-icon{
-    font-size:20px;
-}
-
-.secure strong{
-    font-size:12px;
-}
-
-.secure p{
-    color:#666;
-    font-size:10px;
-    margin-top:2px;
-}
-
-/* BUTTON */
-
+select:focus,input:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(21,156,255,.08)}
+textarea{resize:vertical;min-height:78px}
+.summary{border-top:1px solid var(--line);margin-top:22px;padding-top:16px}
+.row{display:flex;justify-content:space-between;gap:15px;font-size:11px;margin:10px 0;color:#d2d8e5}.row span:last-child{font-weight:600}
+.total{border-top:1px solid var(--line);margin-top:14px;padding-top:17px;font-size:15px;font-weight:800}
+.notice{border:1px solid rgba(21,156,255,.3);background:rgba(21,156,255,.055);padding:13px;border-radius:6px;font-size:10px;color:#d7e1f2;margin-bottom:18px}
+.notice b{display:block;color:#fff;margin-bottom:3px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{margin-bottom:13px}.field label{font-size:10px;display:block;margin-bottom:6px}.req{color:#ff587f}
+.full{grid-column:1/-1}
 .order-btn{
-    width:100%;
-    border:0;
-    background:#fff;
-    color:#000;
-    padding:16px;
-    border-radius:30px;
-    font-size:13px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:20px;
-    transition:.2s;
+  width:100%;height:48px;border:0;border-radius:8px;background:#fff;color:#03050d;
+  font-size:12px;font-weight:800;cursor:pointer;transition:.25s;margin-top:5px
 }
-
-.order-btn:hover{
-    transform:translateY(-2px);
+.order-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,255,255,.12)}
+.after{
+  border:1px solid var(--line);padding:12px;border-radius:6px;margin-top:14px;
+  font-size:10px;color:var(--muted);display:flex;gap:9px;align-items:flex-start
 }
-
-/* NOTE */
-
-.note{
-    margin-top:14px;
-    border:1px solid #222;
-    border-radius:8px;
-    padding:14px;
-    color:#777;
-    font-size:10px;
-}
-
-/* FOOTER */
-
-footer{
-    border-top:1px solid #222;
-    padding:35px 0;
-}
-
-.footer{
-    display:flex;
-    justify-content:space-between;
-    color:#666;
-    font-size:10px;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-    h1{
-        font-size:38px;
-    }
-
-    .checkout-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:550px){
-
-    .page{
-        padding:45px 0 70px;
-    }
-
-    .sale{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .row{
-        grid-template-columns:1fr;
-    }
-
-    .product-image{
-        width:90px;
-        height:90px;
-    }
-
-    .footer{
-        flex-direction:column;
-        gap:10px;
-    }
-
-}
-
+.secure{border:1px solid var(--line);padding:13px;border-radius:6px;margin-top:20px;font-size:10px;color:var(--muted)}
+.secure strong{color:#fff;display:block;margin-bottom:3px}
+footer{border-top:1px solid var(--line);padding:35px 0 22px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}
+.footer p,.footer a,.footer span{font-size:10px;color:var(--muted)}.footer p{margin-top:11px;max-width:320px}.footer h4{font-size:11px;margin-bottom:11px}.footer a,.footer span{display:block;margin:6px 0}
+.footer-bottom{border-top:1px solid var(--line);margin-top:25px;padding-top:16px;display:flex;justify-content:space-between;font-size:9px;color:#71798a}
+.whatsapp{position:fixed;right:22px;bottom:20px;width:48px;height:48px;border-radius:50%;background:var(--green);color:#03120b;display:flex;align-items:center;justify-content:center;font-size:23px;box-shadow:0 10px 30px rgba(33,212,123,.28)}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.navlinks{display:none}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px}.head h1{font-size:32px}.product-summary{grid-template-columns:90px 1fr}.product-img{width:90px;height:90px}}
 </style>
-
 </head>
-
-
 <body>
-
-
+<div class="top-line"></div>
 <header>
-
-<div class="container nav">
-
-<a href="index.html" class="logo">
-
-<img src="logo.png" alt="P.PRINTORA">
-
-<span>P.PRINTORA</span>
-
-</a>
-
-<a href="index.html#collection" class="back">
-← Back to Collection
-</a>
-
-</div>
-
+  <div class="container nav">
+    <a class="logo" href="index.html"><img src="logo.png" alt="P.PRINTORA logo"><span>P.PRINTORA</span></a>
+    <nav class="navlinks">
+      <a href="index.html#home">Home</a><a href="index.html#collection">Collection</a><a href="index.html#why">Why Us</a><a href="index.html#faq">FAQ</a><a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-actions"><span>⌕</span><span>🛒</span><a class="shop-btn" href="index.html#collection">Shop Now</a></div>
+  </div>
 </header>
 
-
 <main class="page">
-
 <div class="container">
+  <a class="back" href="index.html#collection">← &nbsp;Back to Collection</a>
+  <div class="head">
+    <div class="eyebrow">P.PRINTORA ORDER</div>
+    <h1>Complete Your Order</h1>
+    <p>Review your frame and enter your delivery details.</p>
+  </div>
 
+  <div class="sale">
+    <strong>LIMITED OFFER</strong>
+    <span>Premium frame</span>
+    <span class="old">₹1,599</span>
+    <strong>₹499</strong>
+    <span class="off">69% OFF</span>
+  </div>
 
-<div class="page-header">
+  <div class="layout">
+    <section class="card">
+      <h2>Your Order</h2>
+      <div class="product-summary">
+        <div class="product-img"><img id="productImage" src="product1.jpeg" alt=""></div>
+        <div class="product-info">
+          <h3 id="productName">Hanuman Gada Frame</h3>
+          <p id="productDescription">Premium 3D printed devotional frame.</p>
+          <div class="prices"><span class="old">₹1,599</span><span class="sale-price">₹499</span></div>
+        </div>
+      </div>
 
-<div class="label">
-P.PRINTORA
+      <div class="quantity">
+        <label for="quantity">Quantity</label>
+        <select id="quantity" onchange="updateTotal()">
+          <option value="1">1 Frame</option>
+          <option value="2">2 Frames</option>
+          <option value="3">3 Frames</option>
+          <option value="4">4 Frames</option>
+          <option value="5">5 Frames</option>
+        </select>
+      </div>
+
+      <div class="summary">
+        <div class="row"><span>Original Price</span><span id="originalTotal">₹1,599</span></div>
+        <div class="row"><span>Sale Price</span><span>₹499</span></div>
+        <div class="row"><span>Quantity</span><span id="quantityText">1</span></div>
+        <div class="row total"><span>Total</span><span id="total">₹499</span></div>
+      </div>
+
+      <div class="secure">
+        <strong>◈ &nbsp; Secure & Easy Ordering</strong>
+        Your information is used only to prepare your order details for confirmation.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Delivery Details</h2>
+      <div class="notice"><b>◈ &nbsp; Please enter your address carefully.</b>Your details will be sent to P.PRINTORA through WhatsApp for order confirmation.</div>
+
+      <form id="orderForm">
+        <div class="form-grid">
+          <div class="field full"><label>Full Name <span class="req">*</span></label><input id="name" required placeholder="Enter your full name"></div>
+          <div class="field full"><label>Phone Number <span class="req">*</span></label><input id="phone" required inputmode="numeric" maxlength="10" placeholder="10-digit mobile number"></div>
+          <div class="field full"><label>Complete Delivery Address <span class="req">*</span></label><textarea id="address" required placeholder="House / Flat No., Street, Area"></textarea></div>
+          <div class="field"><label>City <span class="req">*</span></label><input id="city" required placeholder="Your city"></div>
+          <div class="field"><label>State <span class="req">*</span></label><input id="state" required placeholder="Your state"></div>
+          <div class="field"><label>PIN Code <span class="req">*</span></label><input id="pincode" required inputmode="numeric" maxlength="6" placeholder="6-digit PIN"></div>
+          <div class="field"><label>Quantity <span class="req">*</span></label><select id="quantity2" onchange="syncQuantity()"><option value="1">1 Frame</option><option value="2">2 Frames</option><option value="3">3 Frames</option><option value="4">4 Frames</option><option value="5">5 Frames</option></select></div>
+          <div class="field full"><label>Landmark / Extra Note</label><textarea id="note" placeholder="Optional delivery instructions"></textarea></div>
+        </div>
+        <button class="order-btn" type="submit">◉ &nbsp; Confirm Order on WhatsApp</button>
+      </form>
+
+      <div class="after">◉ <span>After clicking the button, your order details will open in WhatsApp for confirmation.</span></div>
+    </section>
+  </div>
 </div>
-
-<h1>
-Complete Your Order
-</h1>
-
-<p class="subtitle">
-Review your frame and enter your delivery details.
-</p>
-
-</div>
-
-
-<!-- SALE -->
-
-<div class="sale">
-
-<div>
-LIMITED TIME OFFER —
-<strong>₹499</strong>
-</div>
-
-<div class="sale-right">
-
-<span class="old">
-₹1,599
-</span>
-
-<strong>
-₹499
-</strong>
-
-<span class="discount">
-69% OFF
-</span>
-
-</div>
-
-</div>
-
-
-<div class="checkout-grid">
-
-
-<!-- LEFT -->
-
-<div class="box">
-
-<h2>
-Your Order
-</h2>
-
-<div class="product">
-
-<div class="product-image">
-
-<img id="productImage" src="product1.jpeg">
-
-</div>
-
-<div class="product-info">
-
-<h3 id="productName">
-Hanuman Gada Frame
-</h3>
-
-<p id="productDescription">
-Premium 3D printed devotional frame.
-</p>
-
-<div class="prices">
-
-<span class="old">
-₹1,599
-</span>
-
-<span class="sale-price">
-₹499
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="summary">
-
-<div class="form-group">
-
-<label>
-Quantity
-</label>
-
-<select id="quantity">
-
-<option value="1">1 Frame</option>
-<option value="2">2 Frames</option>
-<option value="3">3 Frames</option>
-<option value="4">4 Frames</option>
-<option value="5">5 Frames</option>
-<option value="6">6 Frames</option>
-<option value="7">7 Frames</option>
-<option value="8">8 Frames</option>
-<option value="9">9 Frames</option>
-<option value="10">10 Frames</option>
-
-</select>
-
-</div>
-
-
-<div class="summary-row">
-
-<span>
-Original Price
-</span>
-
-<span id="originalTotal">
-₹1,599
-</span>
-
-</div>
-
-
-<div class="summary-row">
-
-<span>
-Sale Price
-</span>
-
-<span id="saleTotal">
-₹499
-</span>
-
-</div>
-
-
-<div class="summary-row">
-
-<span>
-Quantity
-</span>
-
-<span id="quantityText">
-1
-</span>
-
-</div>
-
-
-<div class="summary-row total">
-
-<span>
-Total
-</span>
-
-<span id="grandTotal">
-₹499
-</span>
-
-</div>
-
-</div>
-
-
-<div class="secure">
-
-<div class="secure-icon">
-♢
-</div>
-
-<div>
-
-<strong>
-Secure & Easy Ordering
-</strong>
-
-<p>
-Your information is used only for order processing.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- RIGHT -->
-
-<div class="box">
-
-<h2>
-Delivery Details
-</h2>
-
-<div class="secure">
-
-<div class="secure-icon">
-♢
-</div>
-
-<div>
-
-<strong>
-Please enter your address carefully.
-</strong>
-
-<p>
-These details will be sent to P.PRINTORA
-through WhatsApp for order confirmation.
-</p>
-
-</div>
-
-</div>
-
-
-<form id="orderForm">
-
-
-<div class="form-group">
-
-<label>
-Full Name *
-</label>
-
-<input
-    type="text"
-    id="name"
-    placeholder="Enter your full name"
-    required
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Phone Number *
-</label>
-
-<input
-    type="tel"
-    id="phone"
-    placeholder="10-digit mobile number"
-    maxlength="10"
-    required
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Complete Delivery Address *
-</label>
-
-<textarea
-    id="address"
-    placeholder="House / Flat No., Street, Area"
-    required
-></textarea>
-
-</div>
-
-
-<div class="row">
-
-
-<div class="form-group">
-
-<label>
-City *
-</label>
-
-<input
-    type="text"
-    id="city"
-    placeholder="Your city"
-    required
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-State *
-</label>
-
-<input
-    type="text"
-    id="state"
-    placeholder="Your state"
-    required
->
-
-</div>
-
-</div>
-
-
-<div class="row">
-
-
-<div class="form-group">
-
-<label>
-PIN Code *
-</label>
-
-<input
-    type="text"
-    id="pincode"
-    placeholder="6-digit PIN"
-    maxlength="6"
-    required
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Quantity *
-</label>
-
-<select id="quantityForm">
-
-<option value="1">1 Frame</option>
-<option value="2">2 Frames</option>
-<option value="3">3 Frames</option>
-<option value="4">4 Frames</option>
-<option value="5">5 Frames</option>
-<option value="6">6 Frames</option>
-<option value="7">7 Frames</option>
-<option value="8">8 Frames</option>
-<option value="9">9 Frames</option>
-<option value="10">10 Frames</option>
-
-</select>
-
-</div>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Landmark / Extra Note
-</label>
-
-<textarea
-    id="note"
-    placeholder="Optional delivery instructions"
-></textarea>
-
-</div>
-
-
-<button
-    type="submit"
-    class="order-btn"
->
-    ◉ Confirm Order on WhatsApp
-</button>
-
-
-<div class="note">
-    After clicking the button, your order details will
-    open in WhatsApp for confirmation.
-</div>
-
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
 </main>
 
-
 <footer>
-
-<div class="container footer">
-
-<span>
-© 2026 P.PRINTORA. All rights reserved.
-</span>
-
-<span>
-Shape Ideas. Build Reality.
-</span>
-
-</div>
-
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer"><a class="logo" href="index.html"><img src="logo.png" alt="P.PRINTORA logo"><span>P.PRINTORA</span></a><p>Premium 3D printed devotional frames designed to add depth, character and devotion to your space.</p></div>
+      <div class="footer"><h4>Quick Links</h4><a href="index.html">Home</a><a href="index.html#collection">Collection</a><a href="index.html#why">Why Us</a><a href="index.html#faq">FAQ</a></div>
+      <div class="footer"><h4>Contact Us</h4><a href="https://wa.me/918894381130" target="_blank">WhatsApp</a><span>+91 88943 81130</span></div>
+      <div class="footer"><h4>Order</h4><a href="index.html#collection">Shop Collection</a><a href="checkout.html?product=0">Checkout</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 P.PRINTORA. All rights reserved.</span><span>Shape Ideas. Build Reality.</span></div>
+  </div>
 </footer>
 
+<a class="whatsapp" href="https://wa.me/918894381130" target="_blank" aria-label="WhatsApp">◉</a>
 
 <script>
+const SALE_PRICE = 499;
+const OLD_PRICE = 1599;
+const products = [
+  {name:"Hanuman Gada Frame",image:"product1.jpeg",description:"Premium 3D printed devotional frame."},
+  {name:"Black Hanuman Frame",image:"product2.jpeg",description:"Bold dimensional Hanuman design."},
+  {name:"White Hanuman Frame",image:"product3.jpeg",description:"Elegant white Hanuman relief frame."},
+  {name:"Nandi Frame",image:"product4.jpeg",description:"Detailed Nandi devotional frame."},
+  {name:"Mahadev Frame",image:"product5.jpeg",description:"Peaceful Mahadev 3D relief frame."}
+];
 
+const params = new URLSearchParams(location.search);
+let index = Number(params.get("product"));
+if(!Number.isInteger(index) || index < 0 || index >= products.length) index = 0;
 
-const products = {
-
-    1:{
-        name:"Hanuman Gada Frame",
-        image:"product1.jpeg",
-        description:"Premium 3D printed Hanuman Gada devotional frame."
-    },
-
-    2:{
-        name:"Black Hanuman Frame",
-        image:"product2.jpeg",
-        description:"Elegant black Hanuman 3D devotional wall frame."
-    },
-
-    3:{
-        name:"White Hanuman Frame",
-        image:"product3.jpeg",
-        description:"Minimal white Hanuman frame for peaceful spaces."
-    },
-
-    4:{
-        name:"Nandi Frame",
-        image:"product4.jpeg",
-        description:"Beautiful Nandi 3D printed devotional frame."
-    },
-
-    5:{
-        name:"Mahadev Frame",
-        image:"product5.jpeg",
-        description:"Peaceful Mahadev 3D devotional frame."
-    }
-
-};
-
-
-const params = new URLSearchParams(window.location.search);
-
-const selectedProduct =
-    params.get("product") || "1";
-
-
-const product =
-    products[selectedProduct] || products[1];
-
-
-document.getElementById("productImage").src =
-    product.image;
-
-document.getElementById("productName").textContent =
-    product.name;
-
-document.getElementById("productDescription").textContent =
-    product.description;
-
-
-const quantity =
-    document.getElementById("quantity");
-
-const quantityForm =
-    document.getElementById("quantityForm");
-
+const p = products[index];
+document.getElementById("productImage").src = p.image;
+document.getElementById("productImage").alt = p.name;
+document.getElementById("productName").textContent = p.name;
+document.getElementById("productDescription").textContent = p.description;
 
 function updateTotal(){
-
-    const qty =
-        Number(quantity.value);
-
-    const original =
-        1599 * qty;
-
-    const sale =
-        499 * qty;
-
-    document.getElementById("originalTotal")
-        .textContent =
-        "₹" + original.toLocaleString("en-IN");
-
-    document.getElementById("saleTotal")
-        .textContent =
-        "₹" + sale.toLocaleString("en-IN");
-
-    document.getElementById("grandTotal")
-        .textContent =
-        "₹" + sale.toLocaleString("en-IN");
-
-    document.getElementById("quantityText")
-        .textContent = qty;
-
-    quantityForm.value =
-        String(qty);
+  const q = Number(document.getElementById("quantity").value);
+  document.getElementById("quantity2").value = q;
+  document.getElementById("quantityText").textContent = q;
+  document.getElementById("originalTotal").textContent = "₹" + (OLD_PRICE*q).toLocaleString("en-IN");
+  document.getElementById("total").textContent = "₹" + (SALE_PRICE*q).toLocaleString("en-IN");
 }
+function syncQuantity(){
+  document.getElementById("quantity").value = document.getElementById("quantity2").value;
+  updateTotal();
+}
+updateTotal();
 
+document.getElementById("orderForm").addEventListener("submit",function(e){
+  e.preventDefault();
 
-quantity.addEventListener(
-    "change",
-    updateTotal
-);
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.replace(/\D/g,"");
+  const address = document.getElementById("address").value.trim();
+  const city = document.getElementById("city").value.trim();
+  const state = document.getElementById("state").value.trim();
+  const pincode = document.getElementById("pincode").value.replace(/\D/g,"");
+  const quantity = Number(document.getElementById("quantity").value);
+  const note = document.getElementById("note").value.trim();
 
+  if(phone.length !== 10){
+    alert("Please enter a valid 10-digit mobile number.");
+    document.getElementById("phone").focus(); return;
+  }
+  if(pincode.length !== 6){
+    alert("Please enter a valid 6-digit PIN code.");
+    document.getElementById("pincode").focus(); return;
+  }
 
-quantityForm.addEventListener(
-    "change",
-    function(){
-
-        quantity.value =
-            quantityForm.value;
-
-        updateTotal();
-
-    }
-);
-
-
-document
-.getElementById("orderForm")
-.addEventListener("submit",function(e){
-
-    e.preventDefault();
-
-
-    const name =
-        document.getElementById("name")
-        .value.trim();
-
-    const phone =
-        document.getElementById("phone")
-        .value.trim();
-
-    const address =
-        document.getElementById("address")
-        .value.trim();
-
-    const city =
-        document.getElementById("city")
-        .value.trim();
-
-    const state =
-        document.getElementById("state")
-        .value.trim();
-
-    const pincode =
-        document.getElementById("pincode")
-        .value.trim();
-
-    const note =
-        document.getElementById("note")
-        .value.trim();
-
-    const qty =
-        Number(quantity.value);
-
-
-    if(!/^[0-9]{10}$/.test(phone)){
-
-        alert(
-            "Please enter a valid 10-digit mobile number."
-        );
-
-        return;
-
-    }
-
-
-    if(!/^[0-9]{6}$/.test(pincode)){
-
-        alert(
-            "Please enter a valid 6-digit PIN code."
-        );
-
-        return;
-
-    }
-
-
-    const total =
-        499 * qty;
-
-
-    const message =
-
+  const total = SALE_PRICE * quantity;
+  const message =
 `Hello P.PRINTORA,
 
 I want to place an order.
 
-━━━━━━━━━━━━━━━━
-PRODUCT DETAILS
-━━━━━━━━━━━━━━━━
+Product: ${p.name}
+Quantity: ${quantity}
+Sale Price: ₹${SALE_PRICE} each
+Total: ₹${total}
 
-Product: ${product.name}
-Quantity: ${qty}
-Original Price: ₹${(1599 * qty).toLocaleString("en-IN")}
-Sale Price: ₹${total.toLocaleString("en-IN")}
-Discount: 69% OFF
-
-━━━━━━━━━━━━━━━━
-DELIVERY DETAILS
-━━━━━━━━━━━━━━━━
-
+Delivery Details:
 Name: ${name}
 Phone: ${phone}
-
-Address:
-${address}
-
+Address: ${address}
 City: ${city}
 State: ${state}
 PIN Code: ${pincode}
+${note ? "Landmark / Note: " + note : ""}
 
-Landmark / Note:
-${note || "None"}
+Please confirm my order.`;
 
-━━━━━━━━━━━━━━━━
-
-Total Order Value: ₹${total.toLocaleString("en-IN")}
-
-Please confirm my order.
-
-Thank you.
-P.PRINTORA`;
-
-
-    const whatsappURL =
-        "https://wa.me/918894381130?text=" +
-        encodeURIComponent(message);
-
-
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
-
+  window.open("https://wa.me/918894381130?text=" + encodeURIComponent(message),"_blank");
 });
-
-
-updateTotal();
-
 </script>
-
-
 </body>
 </html>
