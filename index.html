@@ -6,8 +6,7 @@
 
 <title>P.PRINTORA | Premium 3D Printed Frames</title>
 
-<meta name="description"
-content="P.PRINTORA premium 3D printed devotional frames. Choose your favourite design.">
+<meta name="description" content="Premium 3D printed devotional frames by P.PRINTORA. Shop beautiful Hanuman, Mahadev, Nandi and devotional frames.">
 
 <style>
 
@@ -23,20 +22,18 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at top,#30182f 0%,#110b13 35%,#07060a 75%);
-    color:#ffffff;
-    min-height:100vh;
+    background:#050505;
+    color:#f5f5f5;
+    line-height:1.6;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 .container{
-    width:92%;
-    max-width:1150px;
+    width:min(1180px,92%);
     margin:auto;
 }
 
@@ -46,254 +43,369 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(8,6,11,0.92);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,255,255,0.10);
+    background:rgba(5,5,5,.94);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid #222;
 }
 
-.navbar{
-    height:76px;
+.nav{
+    height:72px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
-.logo-area{
+.logo{
     display:flex;
     align-items:center;
-    gap:12px;
-    font-size:21px;
-    font-weight:900;
+    gap:10px;
+    font-weight:800;
     letter-spacing:1px;
 }
 
-.logo-area img{
-    width:48px;
-    height:48px;
+.logo img{
+    width:42px;
+    height:42px;
     object-fit:contain;
-    border-radius:10px;
+}
+
+.logo span{
+    font-size:16px;
 }
 
 .nav-links{
     display:flex;
+    gap:32px;
     align-items:center;
-    gap:28px;
-}
-
-.nav-links a{
-    color:#ddd;
-    font-size:14px;
-    font-weight:600;
-    transition:.2s;
+    font-size:13px;
+    color:#aaa;
 }
 
 .nav-links a:hover{
-    color:#ff8a00;
+    color:#fff;
 }
 
-.whatsapp-top{
-    background:#25D366;
-    color:#061108 !important;
-    padding:11px 17px;
-    border-radius:25px;
-    font-weight:900 !important;
+.nav-btn{
+    background:#fff;
+    color:#000;
+    padding:11px 18px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:12px;
 }
 
 /* HERO */
 
 .hero{
-    text-align:center;
-    padding:100px 20px 85px;
+    min-height:650px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:50px;
+    padding:70px 0;
     background:
-        radial-gradient(
-            circle at center top,
-            rgba(255,87,0,0.16),
-            transparent 45%
-        );
+        radial-gradient(circle at 75% 40%,#222 0,#0c0c0c 35%,#050505 70%);
 }
 
-.badge{
-    display:inline-block;
-    padding:9px 16px;
-    border-radius:50px;
-    color:#ffb35f;
-    background:rgba(255,122,0,0.10);
-    border:1px solid rgba(255,122,0,0.35);
-    font-size:13px;
-    font-weight:800;
-    letter-spacing:.5px;
+.hero-small{
+    color:#aaa;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:20px;
 }
 
 .hero h1{
-    margin-top:25px;
-    font-size:clamp(45px,7vw,80px);
-    line-height:.98;
-    letter-spacing:-3px;
-}
-
-.gradient-text{
-    background:
-        linear-gradient(
-            90deg,
-            #ff9b00,
-            #ff1680,
-            #865cff
-        );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
+    font-family:Georgia,serif;
+    font-size:clamp(44px,6vw,76px);
+    line-height:1.02;
+    margin-bottom:25px;
+    font-weight:500;
 }
 
 .hero p{
-    max-width:720px;
-    margin:25px auto 0;
-    color:#bdb6c2;
-    font-size:18px;
-    line-height:1.7;
+    max-width:540px;
+    color:#aaa;
+    font-size:16px;
+    margin-bottom:30px;
 }
 
 .hero-buttons{
-    margin-top:32px;
     display:flex;
-    justify-content:center;
-    gap:13px;
+    gap:14px;
     flex-wrap:wrap;
 }
 
 .btn{
-    border:0;
-    padding:15px 23px;
-    border-radius:12px;
-    font-weight:900;
-    cursor:pointer;
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    transition:.2s;
+    padding:14px 23px;
+    border-radius:30px;
+    border:1px solid #444;
+    font-size:13px;
+    font-weight:700;
+    transition:.25s;
 }
 
 .btn:hover{
     transform:translateY(-2px);
 }
 
-.primary-btn{
-    background:
-        linear-gradient(
-            135deg,
-            #ff9b00,
-            #ff1479
-        );
-
-    color:white;
-
-    box-shadow:
-        0 12px 35px rgba(255,50,100,.20);
+.btn-primary{
+    background:#fff;
+    color:#000;
+    border-color:#fff;
 }
 
-.white-btn{
-    background:#ffffff;
-    color:#111111;
+.hero-product{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-product img{
+    width:min(500px,100%);
+    max-height:540px;
+    object-fit:contain;
+    filter:drop-shadow(0 30px 40px rgba(0,0,0,.8));
+}
+
+/* TRUST */
+
+.trust{
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.trust-item{
+    padding:24px 20px;
+    border-right:1px solid #222;
+}
+
+.trust-item:last-child{
+    border-right:0;
+}
+
+.trust-icon{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.trust-item strong{
+    display:block;
+    font-size:13px;
+    margin-bottom:3px;
+}
+
+.trust-item span{
+    color:#777;
+    font-size:11px;
+}
+
+/* SALE */
+
+.sale{
+    margin:35px auto 0;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    background:#0a0a0a;
+}
+
+.sale-label{
+    font-size:11px;
+    letter-spacing:1px;
+    font-weight:bold;
+}
+
+.sale-center{
+    color:#aaa;
+    font-size:14px;
+}
+
+.price{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    white-space:nowrap;
+}
+
+.old{
+    color:#666;
+    text-decoration:line-through;
+}
+
+.new{
+    font-size:20px;
+    font-weight:800;
+}
+
+.discount{
+    border:1px solid #555;
+    padding:4px 9px;
+    border-radius:20px;
+    font-size:10px;
+}
+
+/* SECTION */
+
+section{
+    padding:90px 0;
+}
+
+.section-top{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-label{
+    color:#777;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+    font-size:42px;
+    font-weight:500;
+    margin:8px 0;
+}
+
+.section-desc{
+    max-width:600px;
+    margin:auto;
+    color:#777;
+    font-size:14px;
 }
 
 /* PRODUCTS */
 
-.products-section{
-    padding:40px 0 90px;
-}
-
-.section-heading{
-    text-align:center;
-}
-
-.section-heading h2{
-    font-size:40px;
-    margin-bottom:10px;
-}
-
-.section-heading p{
-    color:#aaa2ae;
-    font-size:16px;
-}
-
-.product-grid{
+.products{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-    margin-top:38px;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
 }
 
-.product-card{
+.product{
+    background:#0b0b0b;
+    border:1px solid #242424;
+    border-radius:10px;
     overflow:hidden;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.07),
-            rgba(255,255,255,.025)
-        );
-
-    border:1px solid rgba(255,255,255,.11);
-    border-radius:22px;
-
-    box-shadow:
-        0 18px 50px rgba(0,0,0,.35);
-
-    transition:.25s;
+    transition:.3s;
 }
 
-.product-card:hover{
+.product:hover{
     transform:translateY(-5px);
-    border-color:rgba(255,137,0,.35);
+    border-color:#444;
 }
 
 .product-image{
+    position:relative;
+    aspect-ratio:1/1;
+    background:#111;
+    overflow:hidden;
+}
+
+.product-image img{
     width:100%;
-    height:330px;
+    height:100%;
     object-fit:cover;
     display:block;
-    background:#eee;
+}
+
+.sale-badge{
+    position:absolute;
+    left:10px;
+    top:10px;
+    background:#fff;
+    color:#000;
+    padding:5px 8px;
+    border-radius:5px;
+    font-size:9px;
+    font-weight:bold;
 }
 
 .product-content{
-    padding:20px;
+    padding:17px;
 }
 
-.product-content h3{
-    font-size:21px;
-    margin-bottom:9px;
+.product h3{
+    font-family:Georgia,serif;
+    font-size:17px;
+    margin-bottom:7px;
 }
 
-.product-content p{
-    color:#aaa;
-    font-size:14px;
-    line-height:1.5;
-    min-height:43px;
+.product p{
+    color:#777;
+    font-size:11px;
+    min-height:38px;
 }
 
-.price{
-    font-size:27px;
-    font-weight:900;
-    margin:17px 0;
+.product-price{
+    margin:13px 0;
+    display:flex;
+    align-items:center;
+    gap:9px;
 }
 
-.buy-button{
+.product-price .old{
+    font-size:11px;
+}
+
+.product-price .new{
+    font-size:17px;
+}
+
+.buy{
     width:100%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff9b00,
-            #ff1479
-        );
-
-    color:white;
+    display:block;
+    text-align:center;
+    border:1px solid #555;
+    border-radius:30px;
+    padding:10px;
+    font-size:11px;
+    font-weight:bold;
 }
 
-/* FEATURES */
+.buy:hover{
+    background:#fff;
+    color:#000;
+}
 
-.features-section{
-    padding:20px 0 85px;
+/* WHY */
+
+.why{
+    border-top:1px solid #222;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:70px;
+}
+
+.why-heading h2{
+    font-family:Georgia,serif;
+    font-size:44px;
+    font-weight:500;
+    line-height:1.1;
+    margin:8px 0 20px;
+}
+
+.why-heading p{
+    color:#777;
+    font-size:14px;
 }
 
 .features{
@@ -303,123 +415,285 @@ header{
 }
 
 .feature{
-    padding:26px;
-    border-radius:20px;
-    background:#151019;
-    border:1px solid rgba(255,255,255,.10);
+    border-left:1px solid #333;
+    padding-left:20px;
+}
+
+.feature-number{
+    font-size:12px;
+    color:#777;
 }
 
 .feature h3{
-    margin-bottom:10px;
-    font-size:20px;
+    font-family:Georgia,serif;
+    margin:10px 0;
 }
 
 .feature p{
-    color:#aaa;
-    line-height:1.6;
-    font-size:14px;
+    color:#777;
+    font-size:12px;
+}
+
+/* PROCESS */
+
+.process{
+    background:#090909;
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.step{
+    border:1px solid #222;
+    padding:28px;
+    border-radius:10px;
+}
+
+.step-number{
+    font-size:11px;
+    color:#777;
+    letter-spacing:2px;
+}
+
+.step h3{
+    margin:12px 0 7px;
+    font-family:Georgia,serif;
+}
+
+.step p{
+    color:#777;
+    font-size:12px;
+}
+
+/* GIFT */
+
+.gift{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:350px;
+    background:#0b0b0b;
+    border:1px solid #222;
+}
+
+.gift-image{
+    background:
+        linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.7)),
+        url("product5.jpeg") center/cover;
+}
+
+.gift-content{
+    padding:55px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.gift-content h2{
+    font-family:Georgia,serif;
+    font-size:40px;
+    font-weight:500;
+    margin:8px 0 15px;
+}
+
+.gift-content p{
+    color:#777;
+    max-width:450px;
+    margin-bottom:25px;
+}
+
+/* FAQ */
+
+.faq{
+    max-width:800px;
+    margin:auto;
+}
+
+details{
+    border-bottom:1px solid #222;
+    padding:20px 0;
+}
+
+summary{
+    cursor:pointer;
+    font-family:Georgia,serif;
+    font-size:18px;
+}
+
+details p{
+    color:#777;
+    font-size:13px;
+    padding-top:12px;
 }
 
 /* FOOTER */
 
 footer{
-    border-top:1px solid rgba(255,255,255,.10);
-    padding:35px 20px;
-    text-align:center;
-    color:#999;
-    line-height:1.7;
+    border-top:1px solid #222;
+    padding:50px 0 25px;
 }
 
-.footer-name{
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-brand p{
+    color:#777;
+    max-width:330px;
+    font-size:12px;
+    margin-top:15px;
+}
+
+.footer-title{
+    font-size:12px;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    color:#777;
+    font-size:12px;
+}
+
+.footer-links a:hover{
     color:#fff;
-    font-size:18px;
-    font-weight:900;
+}
+
+.copyright{
+    border-top:1px solid #222;
+    margin-top:40px;
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    color:#555;
+    font-size:10px;
 }
 
 /* WHATSAPP */
 
-.floating-whatsapp{
+.whatsapp{
     position:fixed;
     right:20px;
     bottom:20px;
-
-    width:60px;
-    height:60px;
-
+    width:55px;
+    height:55px;
+    background:#fff;
+    color:#000;
     border-radius:50%;
-
-    background:#25D366;
-    color:#061108;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    font-size:28px;
-    font-weight:900;
-
-    box-shadow:
-        0 10px 30px rgba(37,211,102,.30);
-
+    font-size:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
     z-index:999;
 }
 
 /* MOBILE */
 
-@media(max-width:850px){
+@media(max-width:1000px){
 
-    .product-grid{
+    .products{
         grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .trust-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .trust-item:nth-child(2){
+        border-right:0;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding:55px 0;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .sale{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    section{
+        padding:65px 0;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
     }
 
     .features{
         grid-template-columns:1fr;
     }
 
-    .nav-links{
-        gap:10px;
-    }
-
-    .nav-links a:not(.whatsapp-top){
-        display:none;
-    }
-}
-
-@media(max-width:560px){
-
-    .navbar{
-        height:68px;
-    }
-
-    .logo-area{
-        font-size:18px;
-    }
-
-    .logo-area img{
-        width:42px;
-        height:42px;
-    }
-
-    .hero{
-        padding:70px 15px 65px;
-    }
-
-    .hero h1{
-        font-size:48px;
-        letter-spacing:-2px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .product-grid{
+    .process-grid{
         grid-template-columns:1fr;
     }
 
-    .product-image{
-        height:330px;
+    .gift{
+        grid-template-columns:1fr;
     }
+
+    .gift-image{
+        min-height:260px;
+    }
+
+    .gift-content{
+        padding:35px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .copyright{
+        flex-direction:column;
+        gap:8px;
+    }
+
 }
 
 </style>
@@ -427,96 +701,340 @@ footer{
 
 <body>
 
-<!-- HEADER -->
-
 <header>
+    <div class="container nav">
 
-<div class="container navbar">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="P.PRINTORA">
+            <span>P.PRINTORA</span>
+        </a>
 
-<a href="index.html" class="logo-area">
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#collection">Collection</a>
+            <a href="#why">Why Us</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<img src="logo.png" alt="P.PRINTORA Logo">
+        <a href="#collection" class="nav-btn">
+            Shop Now
+        </a>
 
-<span>P.PRINTORA</span>
-
-</a>
-
-<div class="nav-links">
-
-<a href="#products">
-Products
-</a>
-
-<a href="checkout.html">
-Checkout
-</a>
-
-<a
-class="whatsapp-top"
-href="https://wa.me/918894381130?text=Hello%20P.PRINTORA%2C%20I%20want%20to%20know%20more%20about%20your%203D%20frames."
-target="_blank">
-
-WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
+    </div>
 </header>
 
+
+<main id="home">
 
 <!-- HERO -->
 
 <section class="hero">
 
+    <div class="container" style="width:100%;">
+
+        <div class="hero-small">
+            Premium 3D Printed Frames
+        </div>
+
+        <h1>
+            Bring Devotion<br>
+            Into Your Space.
+        </h1>
+
+        <p>
+            Beautifully crafted 3D printed devotional frames designed
+            to bring character, depth and devotion into your home,
+            office or gifting space.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#collection" class="btn btn-primary">
+                Explore Collection →
+            </a>
+
+            <a href="https://wa.me/918894381130" class="btn" target="_blank">
+                ◉ Talk on WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-product">
+        <img src="product1.jpeg" alt="Hanuman Gada Frame">
+    </div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<div class="trust">
+
+<div class="container trust-grid">
+
+    <div class="trust-item">
+        <div class="trust-icon">♢</div>
+        <strong>Premium Detail</strong>
+        <span>Carefully designed pieces</span>
+    </div>
+
+    <div class="trust-item">
+        <div class="trust-icon">♢</div>
+        <strong>Quality Focused</strong>
+        <span>Made with attention to finish</span>
+    </div>
+
+    <div class="trust-item">
+        <div class="trust-icon">◇</div>
+        <strong>Careful Packing</strong>
+        <span>Prepared for safe delivery</span>
+    </div>
+
+    <div class="trust-item">
+        <div class="trust-icon">◉</div>
+        <strong>WhatsApp Support</strong>
+        <span>Easy order assistance</span>
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- SALE -->
+
 <div class="container">
 
-<span class="badge">
-PREMIUM 3D PRINTED FRAMES
-</span>
+<div class="sale">
 
-<h1>
+    <div class="sale-label">
+        LIMITED TIME OFFER
+    </div>
 
-Shape Ideas.
+    <div class="sale-center">
+        Premium devotional frames now at just
+        <strong>₹499</strong>
+    </div>
 
-<br>
+    <div class="price">
+        <span class="old">₹1,599</span>
+        <span class="new">₹499</span>
+        <span class="discount">69% OFF</span>
+    </div>
 
-<span class="gradient-text">
-Build Reality.
-</span>
+</div>
 
-</h1>
+</div>
 
-<p>
 
-Bring devotion and modern design together with
-P.PRINTORA's premium 3D printed frames.
+<!-- COLLECTION -->
 
-Choose your favourite design for just
-<strong>₹999</strong>.
+<section id="collection">
 
-</p>
+<div class="container">
 
-<div class="hero-buttons">
+<div class="section-top">
 
-<a
-href="#products"
-class="btn primary-btn">
+    <div class="section-label">
+        Our Collection
+    </div>
 
-Shop Collection — ₹999
+    <h2 class="section-title">
+        Divine Frames for Your Space
+    </h2>
 
-</a>
+    <p class="section-desc">
+        Choose from our exclusive collection of 3D printed devotional
+        frames. Each piece is created with depth, detail and devotion.
+    </p>
 
-<a
-href="https://wa.me/918894381130?text=Hello%20P.PRINTORA%2C%20I%20want%20to%20order%20a%203D%20frame."
-target="_blank"
-class="btn white-btn">
+</div>
 
-Chat on WhatsApp
 
-</a>
+<div class="products">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <img src="product1.jpeg" alt="Hanuman Gada Frame">
+
+    <span class="sale-badge">
+        69% OFF
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h3>Hanuman Gada Frame</h3>
+
+    <p>
+        Premium 3D printed Hanuman Gada devotional frame.
+    </p>
+
+    <div class="product-price">
+        <span class="old">₹1,599</span>
+        <span class="new">₹499</span>
+    </div>
+
+    <a href="checkout.html?product=1" class="buy">
+        Buy Now →
+    </a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <img src="product2.jpeg" alt="Black Hanuman Frame">
+
+    <span class="sale-badge">
+        69% OFF
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h3>Black Hanuman Frame</h3>
+
+    <p>
+        Elegant black Hanuman 3D devotional wall frame.
+    </p>
+
+    <div class="product-price">
+        <span class="old">₹1,599</span>
+        <span class="new">₹499</span>
+    </div>
+
+    <a href="checkout.html?product=2" class="buy">
+        Buy Now →
+    </a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <img src="product3.jpeg" alt="White Hanuman Frame">
+
+    <span class="sale-badge">
+        69% OFF
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h3>White Hanuman Frame</h3>
+
+    <p>
+        Minimal white Hanuman frame for peaceful spaces.
+    </p>
+
+    <div class="product-price">
+        <span class="old">₹1,599</span>
+        <span class="new">₹499</span>
+    </div>
+
+    <a href="checkout.html?product=3" class="buy">
+        Buy Now →
+    </a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <img src="product4.jpeg" alt="Nandi Frame">
+
+    <span class="sale-badge">
+        69% OFF
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h3>Nandi Frame</h3>
+
+    <p>
+        Beautiful Nandi 3D printed devotional frame.
+    </p>
+
+    <div class="product-price">
+        <span class="old">₹1,599</span>
+        <span class="new">₹499</span>
+    </div>
+
+    <a href="checkout.html?product=4" class="buy">
+        Buy Now →
+    </a>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 5 -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <img src="product5.jpeg" alt="Mahadev Frame">
+
+    <span class="sale-badge">
+        69% OFF
+    </span>
+
+</div>
+
+<div class="product-content">
+
+    <h3>Mahadev Frame</h3>
+
+    <p>
+        Peaceful Mahadev 3D devotional frame.
+    </p>
+
+    <div class="product-price">
+        <span class="old">₹1,599</span>
+        <span class="new">₹499</span>
+    </div>
+
+    <a href="checkout.html?product=5" class="buy">
+        Buy Now →
+    </a>
+
+</div>
+
+</div>
 
 </div>
 
@@ -525,82 +1043,77 @@ Chat on WhatsApp
 </section>
 
 
-<!-- PRODUCTS -->
+<!-- WHY -->
 
-<section
-class="products-section"
-id="products">
+<section id="why" class="why">
 
-<div class="container">
+<div class="container why-grid">
 
-<div class="section-heading">
+<div class="why-heading">
 
-<h2>
-Our Collection
-</h2>
+    <div class="section-label">
+        Why P.PRINTORA
+    </div>
 
-<p>
-Premium 3D printed frames — ₹999 each.
-</p>
+    <h2>
+        Made To<br>
+        Feel Special.
+    </h2>
 
-</div>
-
-<div
-class="product-grid"
-id="productGrid">
-</div>
+    <p>
+        We focus on the details that make a devotional frame
+        feel like more than just wall decoration.
+    </p>
 
 </div>
 
-</section>
-
-
-<!-- FEATURES -->
-
-<section class="features-section">
-
-<div class="container">
 
 <div class="features">
 
 <div class="feature">
 
-<h3>
-✨ Premium Finish
-</h3>
+    <span class="feature-number">01</span>
 
-<p>
-Detailed 3D relief designs presented in
-stylish frames for a premium display.
-</p>
+    <h3>
+        Dimensional 3D Design
+    </h3>
 
-</div>
-
-
-<div class="feature">
-
-<h3>
-📦 Easy Ordering
-</h3>
-
-<p>
-Choose your favourite product and continue
-to our separate secure checkout page.
-</p>
+    <p>
+        Raised relief designs create depth and character
+        that ordinary prints cannot provide.
+    </p>
 
 </div>
 
 
 <div class="feature">
 
-<h3>
-💬 WhatsApp Support
-</h3>
+    <span class="feature-number">02</span>
 
-<p>
-Get order confirmation and payment
-instructions directly through WhatsApp.
-</p>
+    <h3>
+        Thoughtful Finishing
+    </h3>
+
+    <p>
+        Every piece is prepared with attention to its
+        overall appearance and finish.
+    </p>
+
+</div>
+
+
+<div class="feature">
+
+    <span class="feature-number">03</span>
+
+    <h3>
+        Made For Gifting
+    </h3>
+
+    <p>
+        A meaningful choice for your home, family,
+        friends and special occasions.
+    </p>
 
 </div>
 
@@ -611,125 +1124,284 @@ instructions directly through WhatsApp.
 </section>
 
 
-<!-- FOOTER -->
+<!-- PROCESS -->
 
-<footer>
+<section class="process">
 
-<div class="footer-name">
-P.PRINTORA
+<div class="container">
+
+<div class="section-top">
+
+    <div class="section-label">
+        How It Works
+    </div>
+
+    <h2 class="section-title">
+        Simple Ordering Process
+    </h2>
+
+    <p class="section-desc">
+        Get your favourite frame in just a few easy steps.
+    </p>
+
 </div>
 
-Shape Ideas. Build Reality.
 
-<br><br>
+<div class="process-grid">
 
-WhatsApp:
-<strong>
-+91 88943 81130
-</strong>
+<div class="step">
+
+    <div class="step-number">STEP 01</div>
+
+    <h3>
+        Choose
+    </h3>
+
+    <p>
+        Select your favourite devotional frame
+        from our collection.
+    </p>
+
+</div>
+
+
+<div class="step">
+
+    <div class="step-number">STEP 02</div>
+
+    <h3>
+        Enter Details
+    </h3>
+
+    <p>
+        Provide your name, phone number and
+        complete delivery address.
+    </p>
+
+</div>
+
+
+<div class="step">
+
+    <div class="step-number">STEP 03</div>
+
+    <h3>
+        Confirm
+    </h3>
+
+    <p>
+        Send your order details through WhatsApp
+        and we will assist with confirmation.
+    </p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GIFT -->
+
+<section>
+
+<div class="container">
+
+<div class="gift">
+
+    <div class="gift-image"></div>
+
+    <div class="gift-content">
+
+        <div class="section-label">
+            P.PRINTORA
+        </div>
+
+        <h2>
+            A Meaningful Gift.
+        </h2>
+
+        <p>
+            Give your family or friends a devotional frame
+            designed to bring character, peace and devotion
+            into their space.
+        </p>
+
+        <a href="#collection" class="btn btn-primary">
+            View Collection →
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<div class="container">
+
+<div class="section-top">
+
+    <div class="section-label">
+        FAQ
+    </div>
+
+    <h2 class="section-title">
+        Frequently Asked Questions
+    </h2>
+
+</div>
+
+
+<div class="faq">
+
+<details>
+    <summary>How do I place an order?</summary>
+    <p>
+        Select your favourite frame, click Buy Now,
+        enter your delivery details and confirm your
+        order through WhatsApp.
+    </p>
+</details>
+
+<details>
+    <summary>What is the current price?</summary>
+    <p>
+        The current promotional price is ₹499.
+        The original listed price is ₹1,599.
+    </p>
+</details>
+
+<details>
+    <summary>Can I order more than one frame?</summary>
+    <p>
+        Yes. You can select the quantity during checkout.
+    </p>
+</details>
+
+<details>
+    <summary>How will I receive order confirmation?</summary>
+    <p>
+        Your details will open in WhatsApp so the order
+        can be confirmed with you.
+    </p>
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-brand">
+
+    <div class="logo">
+
+        <img src="logo.png" alt="P.PRINTORA">
+
+        <span>P.PRINTORA</span>
+
+    </div>
+
+    <p>
+        Premium 3D printed devotional frames designed
+        to add depth, character and devotion to your space.
+    </p>
+
+</div>
+
+
+<div>
+
+    <div class="footer-title">
+        Quick Links
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#home">Home</a>
+        <a href="#collection">Collection</a>
+        <a href="#why">Why Us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</div>
+
+
+<div>
+
+    <div class="footer-title">
+        Contact Us
+    </div>
+
+    <div class="footer-links">
+
+        <a href="https://wa.me/918894381130" target="_blank">
+            WhatsApp
+        </a>
+
+        <span>
+            +91 88943 81130
+        </span>
+
+        <span>
+            Order Support
+        </span>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+    <span>
+        © 2026 P.PRINTORA. All rights reserved.
+    </span>
+
+    <span>
+        Shape Ideas. Build Reality.
+    </span>
+
+</div>
+
+</div>
 
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
-
 <a
-class="floating-whatsapp"
-href="https://wa.me/918894381130?text=Hello%20P.PRINTORA"
-target="_blank"
-aria-label="Contact P.PRINTORA on WhatsApp">
-
-✆
-
-</a>
-
-
-<script>
-
-const products = [
-
-{
-    name:"Hanuman Gada Frame",
-    image:"product1.jpeg",
-    description:"Premium Hanuman Gada 3D relief frame."
-},
-
-{
-    name:"Black Hanuman Frame",
-    image:"product2.jpeg",
-    description:"Bold black Hanuman 3D devotional frame."
-},
-
-{
-    name:"White Hanuman Frame",
-    image:"product3.jpeg",
-    description:"Elegant white Hanuman relief design."
-},
-
-{
-    name:"Nandi Frame",
-    image:"product4.jpeg",
-    description:"Detailed Nandi 3D printed wall frame."
-},
-
-{
-    name:"Mahadev Frame",
-    image:"product5.jpeg",
-    description:"Minimal Mahadev 3D devotional frame."
-}
-
-];
-
-
-const productGrid =
-document.getElementById("productGrid");
-
-
-productGrid.innerHTML = products.map(
-
-(product,index)=>`
-
-<div class="product-card">
-
-<img
-class="product-image"
-src="${product.image}"
-alt="${product.name}"
-loading="lazy"
+    class="whatsapp"
+    href="https://wa.me/918894381130"
+    target="_blank"
+    aria-label="WhatsApp"
 >
-
-<div class="product-content">
-
-<h3>
-${product.name}
-</h3>
-
-<p>
-${product.description}
-</p>
-
-<div class="price">
-₹999
-</div>
-
-<a
-class="btn buy-button"
-href="checkout.html?product=${index}">
-
-Buy Now
-
+    ◉
 </a>
 
-</div>
-
-</div>
-
-`
-
-).join("");
-
-</script>
 
 </body>
-</html>
 </html>
