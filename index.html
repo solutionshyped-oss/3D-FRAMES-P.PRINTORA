@@ -7,13 +7,9 @@
 <title>P.PRINTORA | Premium 3D Printed Frames</title>
 
 <meta name="description"
-content="P.PRINTORA premium 3D printed frames. Choose your favourite design for ₹999.">
+content="P.PRINTORA premium 3D printed devotional frames. Choose your favourite design.">
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
 
 *{
     margin:0;
@@ -44,25 +40,19 @@ a{
     margin:auto;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
-
     background:rgba(8,6,11,0.92);
     backdrop-filter:blur(15px);
-
     border-bottom:1px solid rgba(255,255,255,0.10);
 }
 
 .navbar{
     height:76px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -72,7 +62,6 @@ header{
     display:flex;
     align-items:center;
     gap:12px;
-
     font-size:21px;
     font-weight:900;
     letter-spacing:1px;
@@ -81,9 +70,7 @@ header{
 .logo-area img{
     width:48px;
     height:48px;
-
     object-fit:contain;
-
     border-radius:10px;
 }
 
@@ -97,7 +84,7 @@ header{
     color:#ddd;
     font-size:14px;
     font-weight:600;
-    transition:0.2s;
+    transition:.2s;
 }
 
 .nav-links a:hover{
@@ -107,23 +94,16 @@ header{
 .whatsapp-top{
     background:#25D366;
     color:#061108 !important;
-
     padding:11px 17px;
     border-radius:25px;
-
     font-weight:900 !important;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     text-align:center;
-
     padding:100px 20px 85px;
-
     background:
         radial-gradient(
             circle at center top,
@@ -134,30 +114,20 @@ header{
 
 .badge{
     display:inline-block;
-
     padding:9px 16px;
-
     border-radius:50px;
-
     color:#ffb35f;
-
     background:rgba(255,122,0,0.10);
-
     border:1px solid rgba(255,122,0,0.35);
-
     font-size:13px;
     font-weight:800;
-
     letter-spacing:.5px;
 }
 
 .hero h1{
     margin-top:25px;
-
     font-size:clamp(45px,7vw,80px);
-
-    line-height:0.98;
-
+    line-height:.98;
     letter-spacing:-3px;
 }
 
@@ -172,51 +142,34 @@ header{
 
     -webkit-background-clip:text;
     background-clip:text;
-
     color:transparent;
 }
 
 .hero p{
     max-width:720px;
-
     margin:25px auto 0;
-
     color:#bdb6c2;
-
     font-size:18px;
-
     line-height:1.7;
 }
 
 .hero-buttons{
     margin-top:32px;
-
     display:flex;
-
     justify-content:center;
-
     gap:13px;
-
     flex-wrap:wrap;
 }
 
 .btn{
     border:0;
-
     padding:15px 23px;
-
     border-radius:12px;
-
     font-weight:900;
-
     cursor:pointer;
-
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
-
     transition:.2s;
 }
 
@@ -240,14 +193,10 @@ header{
 
 .white-btn{
     background:#ffffff;
-
     color:#111111;
 }
 
-
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 .products-section{
     padding:40px 0 90px;
@@ -259,24 +208,18 @@ header{
 
 .section-heading h2{
     font-size:40px;
-
     margin-bottom:10px;
 }
 
 .section-heading p{
     color:#aaa2ae;
-
     font-size:16px;
 }
 
 .product-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:22px;
-
     margin-top:38px;
 }
 
@@ -291,7 +234,6 @@ header{
         );
 
     border:1px solid rgba(255,255,255,.11);
-
     border-radius:22px;
 
     box-shadow:
@@ -302,20 +244,14 @@ header{
 
 .product-card:hover{
     transform:translateY(-5px);
-
-    border-color:
-        rgba(255,137,0,.35);
+    border-color:rgba(255,137,0,.35);
 }
 
 .product-image{
     width:100%;
-
     height:330px;
-
     object-fit:cover;
-
     display:block;
-
     background:#eee;
 }
 
@@ -325,25 +261,19 @@ header{
 
 .product-content h3{
     font-size:21px;
-
     margin-bottom:9px;
 }
 
 .product-content p{
     color:#aaa;
-
     font-size:14px;
-
     line-height:1.5;
-
     min-height:43px;
 }
 
 .price{
     font-size:27px;
-
     font-weight:900;
-
     margin:17px 0;
 }
 
@@ -360,10 +290,7 @@ header{
     color:white;
 }
 
-
-/* =========================
-   FEATURES
-========================= */
+/* FEATURES */
 
 .features-section{
     padding:20px 0 85px;
@@ -371,233 +298,64 @@ header{
 
 .features{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
 .feature{
     padding:26px;
-
     border-radius:20px;
-
     background:#151019;
-
     border:1px solid rgba(255,255,255,.10);
 }
 
 .feature h3{
     margin-bottom:10px;
-
     font-size:20px;
 }
 
 .feature p{
     color:#aaa;
-
     line-height:1.6;
-
     font-size:14px;
 }
 
-
-/* =========================
-   CHECKOUT
-========================= */
-
-.checkout-section{
-    padding:60px 0 90px;
-}
-
-.checkout-box{
-    width:100%;
-
-    max-width:760px;
-
-    margin:auto;
-
-    padding:30px;
-
-    border-radius:24px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #19111d,
-            #0e0a12
-        );
-
-    border:1px solid rgba(255,255,255,.11);
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.35);
-}
-
-.checkout-box h2{
-    font-size:34px;
-
-    margin-bottom:8px;
-}
-
-.checkout-subtitle{
-    color:#aaa;
-
-    margin-bottom:22px;
-}
-
-.order-summary{
-    background:#09070d;
-
-    border:1px solid rgba(255,255,255,.10);
-
-    border-radius:13px;
-
-    padding:17px;
-
-    margin-bottom:20px;
-
-    color:#ddd;
-
-    line-height:1.6;
-}
-
-.form-grid{
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:14px;
-}
-
-input,
-textarea{
-    width:100%;
-
-    padding:15px;
-
-    border-radius:11px;
-
-    border:1px solid #3c333f;
-
-    background:#09070d;
-
-    color:#ffffff;
-
-    outline:none;
-
-    font-size:14px;
-}
-
-input:focus,
-textarea:focus{
-    border-color:#ff7a00;
-}
-
-textarea{
-    min-height:110px;
-
-    resize:vertical;
-
-    grid-column:1 / -1;
-}
-
-.full-width{
-    grid-column:1 / -1;
-}
-
-.order-whatsapp{
-    width:100%;
-
-    margin-top:5px;
-
-    border:0;
-
-    padding:16px;
-
-    border-radius:12px;
-
-    background:#25D366;
-
-    color:#061108;
-
-    font-weight:900;
-
-    font-size:16px;
-
-    cursor:pointer;
-}
-
-.payment-note{
-    text-align:center;
-
-    color:#777;
-
-    font-size:12px;
-
-    margin-top:12px;
-
-    line-height:1.5;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-    border-top:
-        1px solid rgba(255,255,255,.10);
-
+    border-top:1px solid rgba(255,255,255,.10);
     padding:35px 20px;
-
     text-align:center;
-
     color:#999;
-
     line-height:1.7;
 }
 
 .footer-name{
     color:#fff;
-
     font-size:18px;
-
     font-weight:900;
 }
 
-
-/* =========================
-   FLOATING WHATSAPP
-========================= */
+/* WHATSAPP */
 
 .floating-whatsapp{
     position:fixed;
-
     right:20px;
-
     bottom:20px;
 
     width:60px;
-
     height:60px;
 
     border-radius:50%;
 
     background:#25D366;
-
     color:#061108;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     font-size:28px;
-
     font-weight:900;
 
     box-shadow:
@@ -606,10 +364,7 @@ footer{
     z-index:999;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:850px){
 
@@ -629,7 +384,6 @@ footer{
         display:none;
     }
 }
-
 
 @media(max-width:560px){
 
@@ -652,7 +406,6 @@ footer{
 
     .hero h1{
         font-size:48px;
-
         letter-spacing:-2px;
     }
 
@@ -667,41 +420,20 @@ footer{
     .product-image{
         height:330px;
     }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    textarea,
-    .full-width{
-        grid-column:auto;
-    }
-
-    .checkout-box{
-        padding:22px;
-    }
-
-    .checkout-box h2{
-        font-size:28px;
-    }
 }
 
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
 <div class="container navbar">
 
-<a href="#" class="logo-area">
+<a href="index.html" class="logo-area">
 
 <img src="logo.png" alt="P.PRINTORA Logo">
 
@@ -709,23 +441,23 @@ footer{
 
 </a>
 
-
 <div class="nav-links">
 
 <a href="#products">
 Products
 </a>
 
-<a href="#checkout">
-Order
+<a href="checkout.html">
+Checkout
 </a>
 
 <a
 class="whatsapp-top"
 href="https://wa.me/918894381130?text=Hello%20P.PRINTORA%2C%20I%20want%20to%20know%20more%20about%20your%203D%20frames."
-target="_blank"
->
+target="_blank">
+
 WhatsApp
+
 </a>
 
 </div>
@@ -735,10 +467,7 @@ WhatsApp
 </header>
 
 
-
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -747,7 +476,6 @@ WhatsApp
 <span class="badge">
 PREMIUM 3D PRINTED FRAMES
 </span>
-
 
 <h1>
 
@@ -761,7 +489,6 @@ Build Reality.
 
 </h1>
 
-
 <p>
 
 Bring devotion and modern design together with
@@ -772,23 +499,23 @@ Choose your favourite design for just
 
 </p>
 
-
 <div class="hero-buttons">
 
 <a
 href="#products"
-class="btn primary-btn"
->
-Shop Collection — ₹999
-</a>
+class="btn primary-btn">
 
+Shop Collection — ₹999
+
+</a>
 
 <a
 href="https://wa.me/918894381130?text=Hello%20P.PRINTORA%2C%20I%20want%20to%20order%20a%203D%20frame."
 target="_blank"
-class="btn white-btn"
->
+class="btn white-btn">
+
 Chat on WhatsApp
+
 </a>
 
 </div>
@@ -798,18 +525,13 @@ Chat on WhatsApp
 </section>
 
 
-
-<!-- =========================
-     PRODUCTS
-========================= -->
+<!-- PRODUCTS -->
 
 <section
 class="products-section"
-id="products"
->
+id="products">
 
 <div class="container">
-
 
 <div class="section-heading">
 
@@ -823,30 +545,23 @@ Premium 3D printed frames — ₹999 each.
 
 </div>
 
-
 <div
 class="product-grid"
-id="productGrid"
->
+id="productGrid">
 </div>
-
 
 </div>
 
 </section>
 
 
-
-<!-- =========================
-     FEATURES
-========================= -->
+<!-- FEATURES -->
 
 <section class="features-section">
 
 <div class="container">
 
 <div class="features">
-
 
 <div class="feature">
 
@@ -869,8 +584,8 @@ stylish frames for a premium display.
 </h3>
 
 <p>
-Choose your favourite product and enter
-your complete delivery details.
+Choose your favourite product and continue
+to our separate secure checkout page.
 </p>
 
 </div>
@@ -883,12 +598,11 @@ your complete delivery details.
 </h3>
 
 <p>
-Order confirmation and payment instructions
-can be handled directly through WhatsApp.
+Get order confirmation and payment
+instructions directly through WhatsApp.
 </p>
 
 </div>
-
 
 </div>
 
@@ -897,125 +611,7 @@ can be handled directly through WhatsApp.
 </section>
 
 
-
-<!-- =========================
-     CHECKOUT
-========================= -->
-
-<section
-class="checkout-section"
-id="checkout"
->
-
-<div class="container">
-
-<div class="checkout-box">
-
-
-<h2>
-Complete Your Order
-</h2>
-
-<p class="checkout-subtitle">
-Enter your delivery details below.
-</p>
-
-
-<div
-class="order-summary"
-id="orderSummary"
->
-
-Please select a product first.
-
-</div>
-
-
-<form
-id="orderForm"
->
-
-<div class="form-grid">
-
-
-<input
-type="text"
-id="customerName"
-placeholder="Full Name *"
-required
->
-
-
-<input
-type="tel"
-id="customerPhone"
-placeholder="Phone Number *"
-required
->
-
-
-<textarea
-id="customerAddress"
-placeholder="Complete Delivery Address *"
-required
-></textarea>
-
-
-<input
-type="text"
-id="customerCity"
-placeholder="City *"
-required
->
-
-
-<input
-type="text"
-id="customerPin"
-placeholder="PIN Code *"
-inputmode="numeric"
-required
->
-
-
-<button
-type="submit"
-class="order-whatsapp full-width"
->
-
-ORDER ON WHATSAPP
-
-</button>
-
-
-</div>
-
-</form>
-
-
-<p class="payment-note">
-
-WhatsApp:
-<strong>+91 88943 81130</strong>
-
-<br>
-
-After order confirmation, payment details can be provided.
-
-</p>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1035,27 +631,20 @@ WhatsApp:
 </footer>
 
 
-
-<!-- =========================
-     FLOATING WHATSAPP
-========================= -->
+<!-- FLOATING WHATSAPP -->
 
 <a
 class="floating-whatsapp"
 href="https://wa.me/918894381130?text=Hello%20P.PRINTORA"
 target="_blank"
-aria-label="Contact P.PRINTORA on WhatsApp"
->
+aria-label="Contact P.PRINTORA on WhatsApp">
+
 ✆
+
 </a>
 
 
-
 <script>
-
-/* =========================
-   PRODUCT DATA
-========================= */
 
 const products = [
 
@@ -1092,14 +681,6 @@ const products = [
 ];
 
 
-let selectedProduct = null;
-
-
-
-/* =========================
-   DISPLAY PRODUCTS
-========================= */
-
 const productGrid =
 document.getElementById("productGrid");
 
@@ -1110,7 +691,6 @@ productGrid.innerHTML = products.map(
 
 <div class="product-card">
 
-
 <img
 class="product-image"
 src="${product.image}"
@@ -1118,34 +698,27 @@ alt="${product.name}"
 loading="lazy"
 >
 
-
 <div class="product-content">
-
 
 <h3>
 ${product.name}
 </h3>
 
-
 <p>
 ${product.description}
 </p>
-
 
 <div class="price">
 ₹999
 </div>
 
-
-<button
+<a
 class="btn buy-button"
-onclick="selectProduct(${index})"
->
+href="checkout.html?product=${index}">
 
 Buy Now
 
-</button>
-
+</a>
 
 </div>
 
@@ -1155,153 +728,8 @@ Buy Now
 
 ).join("");
 
-
-
-/* =========================
-   SELECT PRODUCT
-========================= */
-
-function selectProduct(index){
-
-selectedProduct = products[index];
-
-
-document.getElementById("orderSummary").innerHTML = `
-
-<strong>
-${selectedProduct.name}
-</strong>
-
-<br>
-
-Quantity: 1
-
-<br>
-
-Total:
-<strong>
-₹999
-</strong>
-
-`;
-
-
-document
-.getElementById("checkout")
-.scrollIntoView({
-    behavior:"smooth"
-});
-
-}
-
-
-
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
-document
-.getElementById("orderForm")
-.addEventListener(
-"submit",
-function(event){
-
-event.preventDefault();
-
-
-if(!selectedProduct){
-
-alert(
-"Please select a product first."
-);
-
-return;
-
-}
-
-
-const name =
-document
-.getElementById("customerName")
-.value
-.trim();
-
-
-const phone =
-document
-.getElementById("customerPhone")
-.value
-.trim();
-
-
-const address =
-document
-.getElementById("customerAddress")
-.value
-.trim();
-
-
-const city =
-document
-.getElementById("customerCity")
-.value
-.trim();
-
-
-const pin =
-document
-.getElementById("customerPin")
-.value
-.trim();
-
-
-
-const message =
-
-`Hello P.PRINTORA 👋
-
-I want to place an order.
-
-PRODUCT:
-${selectedProduct.name}
-
-PRICE:
-₹999
-
-CUSTOMER DETAILS:
-
-Name: ${name}
-
-Phone: ${phone}
-
-Address:
-${address}
-
-City:
-${city}
-
-PIN Code:
-${pin}
-
-Please confirm my order and send me the payment details.`;
-
-
-const whatsappURL =
-"https://wa.me/918894381130?text="
-+
-encodeURIComponent(message);
-
-
-window.open(
-whatsappURL,
-"_blank"
-);
-
-}
-);
-
 </script>
 
-
 </body>
+</html>
 </html>
