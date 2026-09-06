@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>P.PRINTORA | Checkout</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #30182f 0%,
+            #110b13 38%,
+            #07060a 78%
+        );
+
+    color:#fff;
+    min-height:100vh;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    background:rgba(8,6,11,.94);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.1);
+
+    position:sticky;
+    top:0;
+
+    z-index:10;
+
+    backdrop-filter:blur(15px);
+}
+
+.navbar{
+    height:76px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+.logo-area{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:21px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.logo-area img{
+    width:48px;
+    height:48px;
+
+    object-fit:contain;
+
+    border-radius:10px;
+}
+
+.back{
+    color:#ddd;
+    font-weight:700;
+}
+
+.back:hover{
+    color:#ff9b00;
+}
+
+
+/* CHECKOUT */
+
+.checkout-section{
+    padding:70px 0 90px;
+}
+
+.checkout-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.checkout-header h1{
+    font-size:clamp(34px,5vw,52px);
+    margin-bottom:10px;
+}
+
+.checkout-header p{
+    color:#aaa;
+}
+
+
+.checkout-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        .85fr 1.15fr;
+
+    gap:25px;
+
+    align-items:start;
+}
+
+
+/* BOX */
+
+.box{
+
+    background:
+        linear-gradient(
+            180deg,
+            #19111d,
+            #0e0a12
+        );
+
+    border:
+        1px solid rgba(255,255,255,.11);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+}
+
+.box h2{
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+
+/* PRODUCT SUMMARY */
+
+.summary{
+
+    background:#09070d;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius:15px;
+
+    padding:18px;
+}
+
+.summary img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+}
+
+.summary h3{
+    font-size:21px;
+}
+
+.summary p{
+
+    color:#aaa;
+
+    margin-top:7px;
+
+    line-height:1.5;
+}
+
+.summary-price{
+
+    font-size:26px;
+
+    font-weight:900;
+
+    margin-top:15px;
+}
+
+.change{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    color:#ffb35f;
+
+    font-weight:700;
+}
+
+
+/* FORM */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:14px;
+}
+
+.field{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+label{
+
+    font-size:13px;
+
+    color:#bbb;
+
+    font-weight:700;
+
+    margin-bottom:6px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:11px;
+
+    border:
+        1px solid #3c333f;
+
+    background:#09070d;
+
+    color:#fff;
+
+    outline:none;
+
+    font-size:14px;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:#ff7a00;
+}
+
+textarea{
+
+    min-height:105px;
+
+    resize:vertical;
+}
+
+
+/* BUTTON */
+
+.submit{
+
+    grid-column:1/-1;
+
+    border:0;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    background:#25D366;
+
+    color:#061108;
+
+    font-weight:900;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    margin-top:5px;
+}
+
+.submit:hover{
+    transform:translateY(-1px);
+}
+
+
+/* SUCCESS */
+
+.success{
+
+    display:none;
+
+    background:
+        rgba(37,211,102,.1);
+
+    border:
+        1px solid rgba(37,211,102,.3);
+
+    padding:14px;
+
+    border-radius:12px;
+
+    color:#bff7d1;
+
+    margin-bottom:16px;
+}
+
+
+/* NOTE */
+
+.note{
+
+    color:#777;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    text-align:center;
+
+    margin-top:13px;
+}
+
+
+/* FOOTER */
+
+footer{
+
+    border-top:
+        1px solid rgba(255,255,255,.1);
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:#999;
+
+    line-height:1.7;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .checkout-layout{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:560px){
+
+    .navbar{
+        height:68px;
+    }
+
+    .logo-area{
+        font-size:18px;
+    }
+
+    .logo-area img{
+        width:42px;
+        height:42px;
+    }
+
+    .checkout-section{
+        padding:45px 0;
+    }
+
+    .box{
+        padding:20px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .submit{
+        grid-column:auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container navbar">
+
+<a
+href="index.html"
+class="logo-area">
+
+<img
+src="logo.png"
+alt="P.PRINTORA Logo">
+
+<span>
+P.PRINTORA
+</span>
+
+</a>
+
+
+<a
+href="index.html#products"
+class="back">
+
+← Back to Products
+
+</a>
+
+</div>
+
+</header>
+
+
+<!-- CHECKOUT -->
+
+<section class="checkout-section">
+
+<div class="container">
+
+
+<div class="checkout-header">
+
+<h1>
+Complete Your Order
+</h1>
+
+<p>
+Enter your delivery details carefully so we can ship your product.
+</p>
+
+</div>
+
+
+<div class="checkout-layout">
+
+
+<!-- PRODUCT -->
+
+<div class="box">
+
+<h2>
+Your Product
+</h2>
+
+
+<div
+class="summary"
+id="summary">
+</div>
+
+
+<a
+class="change"
+href="index.html#products">
+
+← Choose another product
+
+</a>
+
+</div>
+
+
+<!-- CUSTOMER FORM -->
+
+<div class="box">
+
+<h2>
+Shipping Details
+</h2>
+
+
+<div
+class="success"
+id="success">
+
+Your order details are ready.
+WhatsApp will open so you can confirm the order.
+
+</div>
+
+
+<form
+id="orderForm">
+
+
+<div class="form-grid">
+
+
+<!-- NAME -->
+
+<div class="field">
+
+<label for="name">
+Full Name *
+</label>
+
+<input
+id="name"
+type="text"
+required
+autocomplete="name"
+placeholder="Enter your full name">
+
+</div>
+
+
+<!-- PHONE -->
+
+<div class="field">
+
+<label for="phone">
+Phone Number *
+</label>
+
+<input
+id="phone"
+type="tel"
+required
+autocomplete="tel"
+placeholder="10-digit mobile number">
+
+</div>
+
+
+<!-- ADDRESS -->
+
+<div class="field full">
+
+<label for="address">
+House / Street / Delivery Address *
+</label>
+
+<textarea
+id="address"
+required
+autocomplete="street-address"
+placeholder="House number, street, area, landmark">
+</textarea>
+
+</div>
+
+
+<!-- CITY -->
+
+<div class="field">
+
+<label for="city">
+City *
+</label>
+
+<input
+id="city"
+type="text"
+required
+autocomplete="address-level2"
+placeholder="City">
+
+</div>
+
+
+<!-- STATE -->
+
+<div class="field">
+
+<label for="state">
+State *
+</label>
+
+<input
+id="state"
+type="text"
+required
+autocomplete="address-level1"
+placeholder="State">
+
+</div>
+
+
+<!-- PIN -->
+
+<div class="field">
+
+<label for="pin">
+PIN Code *
+</label>
+
+<input
+id="pin"
+type="text"
+required
+inputmode="numeric"
+maxlength="6"
+autocomplete="postal-code"
+placeholder="6-digit PIN">
+
+</div>
+
+
+<!-- QUANTITY -->
+
+<div class="field">
+
+<label for="quantity">
+Quantity *
+</label>
+
+<select id="quantity">
+
+<option value="1">
+1
+</option>
+
+<option value="2">
+2
+</option>
+
+<option value="3">
+3
+</option>
+
+<option value="4">
+4
+</option>
+
+<option value="5">
+5
+</option>
+
+</select>
+
+</div>
+
+
+<!-- LANDMARK -->
+
+<div class="field full">
+
+<label for="landmark">
+Landmark / Extra Note
+</label>
+
+<input
+id="landmark"
+type="text"
+placeholder="Optional">
+
+</div>
+
+
+<!-- SUBMIT -->
+
+<button
+class="submit"
+type="submit">
+
+CONFIRM ORDER ON WHATSAPP
+
+</button>
+
+
+</div>
+
+</form>
+
+
+<p class="note">
+
+Order total is calculated here.
+Payment instructions can be provided after
+order confirmation on WhatsApp.
+
+</p>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<strong style="color:#fff">
+P.PRINTORA
+</strong>
+
+<br>
+
+Premium 3D Printed Frames
+
+<br><br>
+
+WhatsApp:
+<strong>
++91 88943 81130
+</strong>
+
+</footer>
+
+
+<script>
+
+
+/* PRODUCTS */
+
+const products = [
+
+{
+    name:"Hanuman Gada Frame",
+    image:"product1.jpeg",
+    description:"Premium Hanuman Gada 3D relief frame."
+},
+
+{
+    name:"Black Hanuman Frame",
+    image:"product2.jpeg",
+    description:"Bold black Hanuman 3D devotional frame."
+},
+
+{
+    name:"White Hanuman Frame",
+    image:"product3.jpeg",
+    description:"Elegant white Hanuman relief design."
+},
+
+{
+    name:"Nandi Frame",
+    image:"product4.jpeg",
+    description:"Detailed Nandi 3D printed wall frame."
+},
+
+{
+    name:"Mahadev Frame",
+    image:"product5.jpeg",
+    description:"Minimal Mahadev 3D devotional frame."
+}
+
+];
+
+
+const price = 999;
+
+
+/* GET PRODUCT FROM URL */
+
+const params =
+new URLSearchParams(
+    window.location.search
+);
+
+
+let index =
+parseInt(
+    params.get("product"),
+    10
+);
+
+
+if(
+    Number.isNaN(index) ||
+    index < 0 ||
+    index >= products.length
+){
+
+    index = 0;
+
+}
+
+
+const product =
+products[index];
+
+
+/* SUMMARY */
+
+function renderSummary(){
+
+    const quantity =
+        Number(
+            document.getElementById("quantity").value
+        );
+
+
+    const total =
+        price * quantity;
+
+
+    document.getElementById("summary").innerHTML = `
+
+        <img
+        src="${product.image}"
+        alt="${product.name}">
+
+        <h3>
+        ${product.name}
+        </h3>
+
+        <p>
+        ${product.description}
+        </p>
+
+        <p>
+        Quantity:
+        <strong>
+        ${quantity}
+        </strong>
+        </p>
+
+        <div class="summary-price">
+
+        Total:
+        ₹${total.toLocaleString("en-IN")}
+
+        </div>
+
+    `;
+
+}
+
+
+document
+.getElementById("quantity")
+.addEventListener(
+    "change",
+    renderSummary
+);
+
+
+renderSummary();
+
+
+/* FORM */
+
+document
+.getElementById("orderForm")
+.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const name =
+        document
+        .getElementById("name")
+        .value
+        .trim();
+
+
+        const phone =
+        document
+        .getElementById("phone")
+        .value
+        .trim();
+
+
+        const address =
+        document
+        .getElementById("address")
+        .value
+        .trim();
+
+
+        const city =
+        document
+        .getElementById("city")
+        .value
+        .trim();
+
+
+        const state =
+        document
+        .getElementById("state")
+        .value
+        .trim();
+
+
+        const pin =
+        document
+        .getElementById("pin")
+        .value
+        .trim();
+
+
+        const quantity =
+        document
+        .getElementById("quantity")
+        .value;
+
+
+        const landmark =
+        document
+        .getElementById("landmark")
+        .value
+        .trim();
+
+
+        /* PHONE VALIDATION */
+
+        const cleanPhone =
+        phone.replace(/\D/g,"");
+
+
+        if(
+            !/^[0-9]{10}$/.test(cleanPhone)
+        ){
+
+            alert(
+                "Please enter a valid 10-digit phone number."
+            );
+
+            return;
+
+        }
+
+
+        /* PIN VALIDATION */
+
+        if(
+            !/^[0-9]{6}$/.test(pin)
+        ){
+
+            alert(
+                "Please enter a valid 6-digit PIN code."
+            );
+
+            return;
+
+        }
+
+
+        const total =
+        price * Number(quantity);
+
+
+        /* WHATSAPP MESSAGE */
+
+        const message =
+
+`Hello P.PRINTORA 👋
+
+I want to place an order.
+
+PRODUCT:
+${product.name}
+
+PRICE PER FRAME:
+₹${price}
+
+QUANTITY:
+${quantity}
+
+TOTAL:
+₹${total}
+
+CUSTOMER DETAILS:
+
+Name:
+${name}
+
+Phone:
+${phone}
+
+DELIVERY ADDRESS:
+
+${address}
+
+City:
+${city}
+
+State:
+${state}
+
+PIN Code:
+${pin}
+
+${landmark ? "Landmark / Note:\n" + landmark : ""}
+
+Please confirm my order and send me the payment and shipping details.`;
+
+
+        /* SHOW SUCCESS */
+
+        document
+        .getElementById("success")
+        .style.display = "block";
+
+
+        /* OPEN WHATSAPP */
+
+        const whatsappURL =
+        "https://wa.me/918894381130?text="
+        +
+        encodeURIComponent(message);
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
+
+);
+
+</script>
+
+</body>
+
+</html>
