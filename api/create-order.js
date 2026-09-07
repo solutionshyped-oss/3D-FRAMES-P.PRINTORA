@@ -1,8 +1,8 @@
-module.exports = async function handler(req, res) {
-  // Always return JSON
-  res.setHeader("Content-Type", "application/json");
+const Razorpay = require("razorpay");
 
+module.exports = async function handler(req, res) {
   try {
+    // Only allow POST requests
     if (req.method !== "POST") {
       return res.status(405).json({
         success: false,
@@ -10,6 +10,7 @@ module.exports = async function handler(req, res) {
       });
     }
 
+    // Get customer/order information
     const {
       product,
       quantity,
@@ -22,15 +23,17 @@ module.exports = async function handler(req, res) {
       landmark
     } = req.body || {};
 
+    // Validate quantity
     const qty = Number(quantity);
 
-    if (!product || !Number.isInteger(qty) || qty < 1 || qty > 10) {
+    if (!Number.isInteger(qty) || qty < 1 || qty > 10) {
       return res.status(400).json({
         success: false,
-        error: "Invalid order details"
+        error: "Invalid quantity"
       });
     }
 
+    // Validate delivery information
     if (
       !customer_name ||
       !customer_phone ||
@@ -45,11 +48,22 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    const keyId = process.env.RAZORPAY_KEY_ID;
-    const keySecret = process.env.RAZORPAY_KEY_SECRET;
+    // Read Razorpay credentials from Vercel Environment Variables
+    const keyId = process.env.RAZORPAY_KEY_ID?.trim();
+    const keySecret = process.env.RAZORPAY_KEY_SECRET?.trim();
 
+    // SAFE DEBUG LOG
+    // This does NOT print the complete secret.
+    console.log("RAZORPAY DEBUG:", {
+      keyIdPrefix: keyId ? keyId.substring(0, 12) : "MISSING",
+      keyIdLength: keyId ? keyId.length : 0,
+      secretPrefix: keySecret ? keySecret.substring(0, 8) : "MISSING",
+      secretLength: keySecret ? keySecret.length : 0
+    });
+
+    // Check environment variables
     if (!keyId || !keySecret) {
-      console.error("Razorpay keys are missing");
+      console.error("Razorpay environment variables are missing");
 
       return res.status(500).json({
         success: false,
@@ -57,62 +71,55 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    // ₹499 per item
+    // Initialize Razorpay
+    const razorpay = new Razorpay({
+      key_id: keyId,
+      key_secret: keySecret
+    });
+
+    // Product price
     const pricePerItem = 499;
+
+    // Total in rupees
     const amount = pricePerItem * qty;
 
-    const receipt = "PPRINTORA_" + Date.now();
+    // Create Razorpay order
+    const options = {
+      amount: amount * 100,
+      currency: "INR",
+      receipt: `PPRINTORA_${Date.now()}`,
 
-    const razorpayResponse = await fetch(
-      "https://api.razorpay.com/v1/orders",
-      {
-        method: "POST",
-        headers: {
-          "Authorization":
-            "Basic " +
-            Buffer.from(`${keyId}:${keySecret}`).toString("base64"),
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          amount: amount * 100,
-          currency: "INR",
-          receipt: receipt,
-          notes: {
-            product: String(product),
-            quantity: String(qty),
-            customer_name: String(customer_name),
-            customer_phone: String(customer_phone),
-            address: String(address),
-            city: String(city),
-            state: String(state),
-            pincode: String(pincode),
-            landmark: String(landmark || "")
-          }
-        })
+      notes: {
+        product: String(product || ""),
+        quantity: String(qty),
+        customer_name: String(customer_name),
+        customer_phone: String(customer_phone),
+        address: String(address),
+        city: String(city),
+        state: String(state),
+        pincode: String(pincode),
+        landmark: String(landmark || "")
       }
-    );
+    };
 
-    const data = await razorpayResponse.json();
+    console.log("Creating Razorpay order:", {
+      amount: options.amount,
+      currency: options.currency,
+      quantity: qty
+    });
 
-    if (!razorpayResponse.ok) {
-      console.error("Razorpay API error:", data);
+    const order = await razorpay.orders.create(options);
 
-      return res.status(razorpayResponse.status).json({
-        success: false,
-        error:
-          data?.error?.description ||
-          data?.error?.code ||
-          "Razorpay order creation failed"
-      });
-    }
+    console.log("Razorpay order created:", order.id);
 
+    // Send order information back to checkout
     return res.status(200).json({
       success: true,
       key_id: keyId,
-      amount: data.amount,
-      currency: data.currency,
-      order_id: data.id,
-      order_token: data.id
+      amount: amount,
+      currency: "INR",
+      order_id: order.id,
+      order_token: order.id
     });
 
   } catch (error) {
@@ -120,7 +127,10 @@ module.exports = async function handler(req, res) {
 
     return res.status(500).json({
       success: false,
-      error: error.message || "Server error while creating order"
+      error:
+        error?.error?.description ||
+        error?.message ||
+        "Failed to create Razorpay order"
     });
   }
 };
